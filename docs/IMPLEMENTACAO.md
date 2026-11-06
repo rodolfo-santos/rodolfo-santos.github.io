@@ -2,6 +2,8 @@
 
 Usar junto com o plano visual, sem redefinir o escopo a cada sessão. Atualizar o estado do cartão com evidência verificável.
 
+Estado em 06/11/2026: P01–P04 entregues para a primeira versão pública. Implementação 4943568, com CI e deploy aprovados. Evidências e limites da revisão em REVISAO-V1.md; publicação e continuação em ESTADO.md.
+
 ## P01: identidade e primeiro momento visual
 
 Construir hero e diagrama conceitual com tipografia, paleta e layout responsivos. Separar conteúdo editorial dos componentes. A pessoa precisa entender quem é Rodolfo e o que constrói. Preparar o encaixe de fotografia sem inserir pessoa fictícia.

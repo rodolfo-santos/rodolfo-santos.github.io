@@ -41,8 +41,6 @@ O push aciona o CI. O deploy do Pages é manual e separado, depois da revisão d
 - [Referências e skills](docs/REFERENCIAS.md)
 - [Regras para contribuir](AGENTS.md)
 
-Destino planejado: https://rodolfo-santos.github.io
-
-O GitHub Pages hospedará o site. O README do perfil terá uma apresentação visual e um link para ele; o GitHub não incorpora uma página HTML/JavaScript animada no perfil.
+O GitHub Pages hospeda o site. O README do perfil contém um banner e um link para ele; o GitHub não incorpora uma página HTML/JavaScript animada no perfil.
 
 Use npm run harness:report para gerar a avaliação estrutural local em reports/. A nota não substitui revisão factual, visual ou de acessibilidade. Build e testes não precisam das skills instaladas no computador do autor.
