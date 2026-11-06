@@ -18,7 +18,7 @@ O item não atendido é HYG-05: licença do código ainda não definida. Não fo
 
 O comando npm run verify passou: privacidade, lint, formatação, tipos, dez testes comportamentais e build estático. As duas skills locais passaram no validador oficial de skills. O hook de edição foi exercitado em processos isolados, incluindo payload inválido e symlink para fora do projeto. O feedback de formatação foi testado sem alterar o arquivo. Os testes do scanner confirmaram que corrigir apenas o arquivo de trabalho não esconde um segredo ainda staged. O pre-push também foi testado contra divergência entre checkout e HEAD.
 
-O feedback de formatação e o hook pre-push fazem parte da configuração versionada. Os hooks específicos do Claude foram testados por seus scripts, não por uma sessão real do Claude Code. O Codex usa comandos e hooks do Git. O CI precisa ter sua execução confirmada após o push; o estado observado é registrado em ESTADO.md.
+O feedback de formatação e o hook pre-push fazem parte da configuração versionada. Os hooks específicos do Claude foram testados por seus scripts, não por uma sessão real do Claude Code. O Codex usa comandos e hooks do Git. O [CI do commit 4024755 passou](https://github.com/rodolfo-santos/rodolfo-santos.github.io/actions/runs/42255738086) com instalação limpa e todos os checks; o estado observado está em ESTADO.md.
 
 ## Reproduzir
 

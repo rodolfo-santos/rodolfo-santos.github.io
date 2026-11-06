@@ -70,7 +70,7 @@ As skills externas de design/GSAP foram pesquisadas em docs/REFERENCIAS.md. A in
 
 ci.yml roda em cada push da main e por disparo manual: privacidade, lint, formatação, tipos, testes, build e harness-score. O relatório fica como artefato da execução. Uma falha no CI não desfaz um commit já enviado; corrigir e enviar novo commit na main. Não configurar regras que exijam PR.
 
-deploy.yml é manual e só publica a main depois de executar novamente os checks. Não dispara automaticamente a página-base. Quando a apresentação estiver revisada, habilitar Pages com fonte GitHub Actions e disparar o workflow. Registrar URL e execução confirmada em docs/ESTADO.md. Não declarar deploy feito por ter enviado código.
+deploy.yml é manual e só publica a main depois de executar novamente os checks. Não dispara automaticamente a página-base. Pages já foi configurado com fonte GitHub Actions, substituindo o modo legado que publicava o README. Quando a apresentação estiver revisada, disparar o workflow. Registrar URL e execução confirmada em docs/ESTADO.md. Não declarar deploy feito por ter enviado código.
 
 ## Limites da nota
 
