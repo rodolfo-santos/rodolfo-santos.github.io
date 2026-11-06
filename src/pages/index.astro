@@ -1,29 +1,11 @@
 ---
-import Architecture from '../components/Architecture.astro';
-import { site, cases, timeline, teaching } from '../content/portfolio';
+import PortfolioBody from '../components/PortfolioBody.astro';
+import { site } from '../content/portfolio';
 import '../styles/global.css';
 const nav = [
   { href: '#trabalho', label: 'Trabalho' },
   { href: '#abordagem', label: 'Abordagem' },
   { href: '#trajetoria', label: 'Trajetória' },
-];
-const capabilities = [
-  {
-    label: 'Arquitetura distribuída',
-    icon: 'M5 6h5v5H5zM19 6h5v5h-5zM12 19h5v5h-5zM10 8.5h9M7.5 11v4h7v4M21.5 11v4h-7',
-  },
-  {
-    label: 'Pagamentos e financeiro',
-    icon: 'M4 8h22v16H4zM4 13h22M8 19h5M8 5h14',
-  },
-  {
-    label: 'Produtos de ponta a ponta',
-    icon: 'M4 6h22v18H4zM4 11h22M8 8.5h.1M11 8.5h.1M12 15l-3 3 3 3M18 15l3 3-3 3',
-  },
-  {
-    label: 'Pessoas e engenharia com IA',
-    icon: 'M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4 25v-3a7 7 0 0 1 14 0v3M23 5v8M19 9h8M23 18v6M20 21h6',
-  },
 ];
 const person = {
   '@context': 'https://schema.org',
@@ -155,9 +137,9 @@ const person = {
           <div class="hero-note">
             <span class="note-line" aria-hidden="true"></span>
             <p>
-              Do código que sustenta o produto
+              Uma trajetória em tecnologia desde 2014.
               <br />
-              às pessoas que o fazem evoluir.
+              Da sala de aula à arquitetura financeira.
             </p>
           </div>
         </div>
@@ -183,7 +165,7 @@ const person = {
               />
               <div class="portrait-caption">
                 <span>Rodolfo dos Santos</span>
-                <span>Engenharia com contexto.</span>
+                <span>Implementação · arquitetura · liderança.</span>
               </div>
             </div>
             <div class="floating-note floating-architecture" aria-hidden="true">
@@ -193,8 +175,8 @@ const person = {
                 </svg>
               </span>
               <div>
-                <span>Conexões que importam</span>
-                <strong>Produto + arquitetura</strong>
+                <span>Payments Engineering Manager</span>
+                <strong>Qeevo Group</strong>
               </div>
             </div>
             <div class="floating-note floating-code" aria-hidden="true">
@@ -214,264 +196,7 @@ const person = {
           Explore o que eu construo
         </a>
       </section>
-      <div class="capability-band shell" aria-label="Áreas de atuação">
-        {capabilities.map((item) => (
-          <div class="capability">
-            <svg viewBox="0 0 30 30" fill="none" aria-hidden="true">
-              <path d={item.icon} />
-            </svg>
-            <span>{item.label}</span>
-          </div>
-        ))}
-      </div>
-      <section
-        class="work-section shell section-space"
-        id="trabalho"
-        aria-labelledby="work-title"
-      >
-        <div class="section-heading" data-reveal>
-          <div>
-            <p class="section-intro">Trabalho que conecta</p>
-            <h2 id="work-title">
-              Sistemas complexos.
-              <br />
-              Valor no mundo real.
-            </h2>
-          </div>
-          <p>
-            Da experiência de quem usa à operação que sustenta o negócio.
-            Algumas frentes em que conecto essas pontas.
-          </p>
-        </div>
-        <div class="case-list">
-          {cases.map((item, index) => (
-            <article
-              class:list={[
-                'case-study',
-                'case-' + item.theme,
-                { 'case-reverse': index === 1 },
-              ]}
-              id={item.id}
-              data-reveal
-            >
-              <div class="case-copy">
-                <p class="case-kicker">
-                  <span class="case-symbol" aria-hidden="true">
-                    {index === 0 ? '⌁' : index === 1 ? '◈' : '✳'}
-                  </span>
-                  {item.kicker}
-                </p>
-                <h3>{item.title}</h3>
-                <p class="case-description">{item.description}</p>
-                <p class="case-role">{item.role}</p>
-                <ul class="tag-list" aria-label="Temas e tecnologias">
-                  {item.tags.map((tag) => (
-                    <li>{tag}</li>
-                  ))}
-                </ul>
-                <details class="case-details">
-                  <summary>
-                    Por dentro da construção <span aria-hidden="true">+</span>
-                  </summary>
-                  <div class="case-details-body">
-                    {item.details.map((detail) => (
-                      <p>{detail}</p>
-                    ))}
-                  </div>
-                </details>
-              </div>
-              <div
-                class:list={['case-visual', 'visual-' + index]}
-                aria-hidden="true"
-                data-tilt
-              >
-                {index === 0 ? (
-                  <div class="payment-scene">
-                    <div class="scene-topline">
-                      <span class="scene-dot"></span>Uma jornada, pontas
-                      conectadas
-                    </div>
-                    <div class="payment-node">
-                      <span class="node-icon">↗</span>
-                      <div>
-                        <small>O ponto de partida</small>
-                        <strong>Checkout</strong>
-                      </div>
-                      <span class="node-check">✓</span>
-                    </div>
-                    <div class="flow-connector">
-                      <i></i>
-                      <span>eventos & integrações</span>
-                    </div>
-                    <div class="payment-node node-core">
-                      <span class="node-icon">⌘</span>
-                      <div>
-                        <small>O centro da operação</small>
-                        <strong>Pagamentos</strong>
-                      </div>
-                      <span class="node-orbit"></span>
-                    </div>
-                    <div class="flow-branch"></div>
-                    <div class="payment-destinations">
-                      <div>
-                        <span>↻</span>Recorrência
-                      </div>
-                      <div>
-                        <span>≋</span>Financeiro
-                      </div>
-                    </div>
-                    <div class="scene-bottomline">
-                      <span></span>Da transação à conciliação
-                    </div>
-                  </div>
-                ) : index === 1 ? (
-                  <div class="web-scene">
-                    <div class="browser-toolbar">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <i>Produto, conteúdo e experiência</i>
-                    </div>
-                    <div class="browser-content">
-                      <div class="browser-nav">
-                        <span class="browser-logo"></span>
-                        <div>
-                          <i></i>
-                          <i></i>
-                          <i></i>
-                        </div>
-                        <span class="browser-action"></span>
-                      </div>
-                      <div class="browser-hero">
-                        <div>
-                          <span class="skeleton skeleton-label"></span>
-                          <span class="skeleton skeleton-title"></span>
-                          <span class="skeleton skeleton-title short"></span>
-                          <span class="skeleton skeleton-copy"></span>
-                          <span class="skeleton skeleton-copy shorter"></span>
-                          <span class="skeleton skeleton-button"></span>
-                        </div>
-                        <div class="browser-art">
-                          <span class="browser-shape shape-one"></span>
-                          <span class="browser-shape shape-two"></span>
-                          <span class="browser-shape shape-three"></span>
-                        </div>
-                      </div>
-                      <div class="browser-products">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </div>
-                    </div>
-                    <div class="web-note">
-                      <span>↗</span>
-                      <div>
-                        <strong>Uma base. Múltiplas experiências.</strong>
-                        <small>Arquitetura que dá espaço ao produto.</small>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <div class="ai-scene">
-                    <div class="scene-topline">
-                      <span class="scene-dot"></span>Engenharia com IA
-                    </div>
-                    <div class="ai-orbit">
-                      <div class="ai-orbit-ring ring-one"></div>
-                      <div class="ai-orbit-ring ring-two"></div>
-                      <div class="ai-core">
-                        <svg viewBox="0 0 52 52" fill="none">
-                          <path d="m26 7 5 13 14 6-14 5-5 14-6-14-13-5 13-6 6-13Z" />
-                          <path d="m41 4 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z" />
-                        </svg>
-                      </div>
-                      <span class="ai-satellite satellite-spec">
-                        Especificação
-                      </span>
-                      <span class="ai-satellite satellite-code">
-                        Implementação
-                      </span>
-                      <span class="ai-satellite satellite-test">Validação</span>
-                    </div>
-                    <div class="ai-terminal">
-                      <span class="terminal-prompt">›</span>
-                      <span>
-                        contexto claro<span class="terminal-plus"> + </span>
-                        feedback contínuo
-                      </span>
-                      <i></i>
-                    </div>
-                    <div class="scene-bottomline">
-                      Intenção humana. Execução ampliada.
-                    </div>
-                  </div>
-                )}
-                <span class="concept-label">Representação conceitual</span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-      <Architecture />
-      <section
-        class="journey-section shell section-space"
-        id="trajetoria"
-        aria-labelledby="journey-title"
-      >
-        <div class="journey-intro" data-reveal>
-          <p class="section-intro">Trajetória em construção contínua</p>
-          <h2 id="journey-title">
-            Aprofundar a técnica.
-            <br />
-            Ampliar o olhar.
-          </h2>
-          <p>
-            Desenvolvimento, arquitetura e liderança fazem parte da mesma
-            história: entender o problema, construir junto e sustentar a
-            evolução.
-          </p>
-          <a
-            class="text-link"
-            href={site.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Trajetória completa no LinkedIn <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-        <div class="timeline">
-          <div class="timeline-track" aria-hidden="true">
-            <span data-timeline-line></span>
-          </div>
-          {timeline.map((item) => (
-            <article class="timeline-item" data-timeline-item>
-              <span class="timeline-point" aria-hidden="true"></span>
-              <p class="timeline-period">{item.period}</p>
-              <h3>{item.company}</h3>
-              <p class="timeline-role">{item.role}</p>
-              <p class="timeline-description">{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-      <section
-        class="teaching-section shell"
-        aria-labelledby="teaching-title"
-        data-reveal
-      >
-        <div class="teaching-symbol" aria-hidden="true">
-          <svg viewBox="0 0 80 80" fill="none">
-            <path d="M13 19h21c5 0 6 3 6 5v41c0-6-6-7-12-7H13V19Zm54 0H46c-5 0-6 3-6 5v41c0-6 6-7 12-7h15V19Z" />
-            <path d="M21 29h10M21 37h10M49 29h10M49 37h10" />
-          </svg>
-        </div>
-        <div>
-          <p class="section-intro">Conhecimento que circula</p>
-          <h2 id="teaching-title">{teaching.title}</h2>
-          <p>{teaching.body}</p>
-        </div>
-        <span class="teaching-orbit" aria-hidden="true"></span>
-      </section>
+      <PortfolioBody />
       <section
         class="contact-section shell section-space"
         id="contato"

@@ -1,0 +1,431 @@
+---
+import { caseStudies } from '../content/case-studies';
+import '../styles/portfolio-v2.css';
+const expertise = [
+  [
+    '01',
+    'Backend e arquitetura',
+    'Serviços, eventos e integrações que acompanham o ciclo de vida da receita.',
+    'Ruby on Rails · Go · PHP/Laravel · PostgreSQL · Redis · Kafka',
+  ],
+  [
+    '02',
+    'Produto e experiência web',
+    'Da descoberta de uma oferta ao checkout, incluindo publicação e operação.',
+    'Vue · Nuxt · TypeScript · SSR · OpenSearch · SEO · Core Web Vitals',
+  ],
+  [
+    '03',
+    'Operação e qualidade',
+    'Testes, rastreabilidade e infraestrutura construídos junto de quem opera.',
+    'Testes unitários e E2E · GitHub Actions · AWS · Terraform com SRE · Grafana',
+  ],
+  [
+    '04',
+    'Engenharia com IA',
+    'Especificações, contexto recuperável e verificações para orientar a implementação.',
+    'SDD · Harness Engineering · Claude e Codex · MCP · RAG · Maestri',
+  ],
+];
+const career = [
+  {
+    company: 'Qeevo Group',
+    date: '09/2025 – atual',
+    roles: ['Payments Engineering Manager'],
+    text: 'Liderança de engenharia de pagamentos, com atuação direta em arquitetura, implementação, integrações financeiras e desenvolvimento do time.',
+  },
+  {
+    company: 'Quero Educação',
+    date: '07/2024 – 08/2025',
+    roles: [
+      'Engineering Manager · 02/2025 – 08/2025',
+      'Staff Software Engineer · 07/2024 – 02/2025',
+    ],
+    text: 'Como Staff, busca, geolocalização, SEO e desempenho. Como EM, construção de um orquestrador de pagamentos e de uma plataforma de publicação com CMS headless.',
+  },
+  {
+    company: 'Melhor Escola',
+    date: '08/2021 – 07/2024',
+    roles: [
+      'Engenheiro de Software Full Stack Sênior · 11/2022 – 07/2024',
+      'Engenheiro de Software Frontend Pleno · 08/2021 – 11/2022',
+    ],
+    text: 'Marketplaces, administração, ofertas e alunos; evolução de frontend, backend, pagamentos e integrações financeiras.',
+  },
+  {
+    company: 'SoluCX',
+    date: '11/2020 – 09/2021',
+    roles: [
+      'Squad Leader · 04/2021 – 09/2021',
+      'Engenheiro de Software Frontend Pleno · 11/2020 – 09/2021',
+    ],
+    text: 'Desenvolvimento frontend e ampliação da responsabilidade para a liderança de squad.',
+  },
+  {
+    company: 'Embraer',
+    date: '02/2020 – 11/2020',
+    roles: [
+      'Analista de Sistemas Financeiros · 09/2020 – 11/2020',
+      'Estágio em Análise de Sistemas · 02/2020 – 09/2020',
+    ],
+    text: 'Experiência em análise de sistemas e no contexto de sistemas financeiros.',
+  },
+  {
+    company: 'Anova Sistemas',
+    date: '11/2019 – 01/2020',
+    roles: ['Engenheiro de Software Júnior'],
+    text: 'Desenvolvimento de software no início da trajetória profissional em engenharia.',
+  },
+  {
+    company: 'Microcamp',
+    date: '03/2015 – 02/2020',
+    roles: ['Professor de Tecnologia'],
+    text: 'Cinco anos ensinando tecnologia. Uma base que continua presente na mentoria, nas discussões técnicas e na formação de engenheiros.',
+  },
+  {
+    company: 'Escola de Governo de São Paulo',
+    date: '01/2014 – 01/2015',
+    roles: ['Estagiário de TI'],
+    text: 'O início da trajetória em tecnologia, antes da sala de aula e da engenharia de produtos.',
+  },
+];
+---
+
+<div class="v2-strip shell" aria-label="Amplitude de atuação">
+  <span>Backend & arquitetura</span>
+  <span>Produtos & marketplaces</span>
+  <span>Pagamentos & financeiro</span>
+  <span>Pessoas & IA</span>
+</div>
+<section
+  class="v2-transform shell section-space"
+  aria-labelledby="transform-title"
+  data-reveal
+>
+  <div class="v2-section-top">
+    <p class="eyebrow">Uma transformação concreta</p>
+    <span class="v2-index">01 / IMPACTO</span>
+  </div>
+  <h2 id="transform-title">
+    O pagamento aprova.
+    <br />
+    <span>Minha engenharia continua.</span>
+  </h2>
+  <p class="v2-lead">
+    Reconstruí a arquitetura que conecta a venda à operação financeira. O
+    efeito: grande parte da consolidação e da carga no Protheus passou a ser
+    automatizada.
+  </p>
+  <div class="v2-change-grid">
+    <div class="v2-before">
+      <span class="v2-small-label">O ponto de partida</span>
+      <h3>
+        Planilhas dispersas.
+        <br />
+        Consolidação manual.
+      </h3>
+      <p>
+        O Financeiro reunia arquivos Excel de diferentes áreas, tratava os dados
+        e fazia a carga no ERP.
+      </p>
+      <div class="v2-flow" aria-hidden="true">
+        <span>Planilhas</span>
+        <i>→</i>
+        <span>Tratamento manual</span>
+        <i>→</i>
+        <span>ERP</span>
+      </div>
+    </div>
+    <div class="v2-after">
+      <span class="v2-small-label">A arquitetura que construí</span>
+      <h3>
+        Receita conectada.
+        <br />
+        Exceções visíveis.
+      </h3>
+      <p>
+        Pagamentos, recorrência, fiscal, recebíveis e contabilidade conectados.
+        A operação segue com análise e tratamento de exceções.
+      </p>
+      <div class="v2-flow">
+        <span>Venda</span>
+        <i aria-hidden="true">→</i>
+        <span>Serviços & conciliação</span>
+        <i aria-hidden="true">→</i>
+        <span>Protheus</span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="v2-system-map"
+    data-architecture
+    aria-label="Visão simplificada do caminho dos pagamentos à contabilidade"
+  >
+    <div class="v2-map-top">
+      <span>Da receita ao registro contábil</span>
+      <span>Visão simplificada</span>
+    </div>
+    <svg viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+      <path
+        d="M120 50H880"
+        stroke="#b49af9"
+        stroke-width="2"
+        fill="none"
+        data-flow-path
+      />
+    </svg>
+    <div class="v2-map-nodes">
+      <div data-flow-node>
+        <span class="v2-map-symbol" aria-hidden="true">
+          ↗
+        </span>
+        <strong>Hub de pagamentos</strong>
+        <p>Adquirentes, transações e receitas de diferentes origens.</p>
+      </div>
+      <div data-flow-node>
+        <span class="v2-map-symbol" aria-hidden="true">
+          ≋
+        </span>
+        <strong>Recebíveis & conciliação</strong>
+        <p>Conferência financeira, fiscal e bancária. Divergências retidas.</p>
+      </div>
+      <div data-flow-node>
+        <span class="v2-map-symbol" aria-hidden="true">
+          ▤
+        </span>
+        <strong>Livro Razão</strong>
+        <p>Eventos para lançamento após o fechamento das pendências.</p>
+      </div>
+      <div data-flow-node>
+        <span class="v2-map-symbol" aria-hidden="true">
+          ✓
+        </span>
+        <strong>Protheus</strong>
+        <p>Dados integrados ao sistema de gestão da operação financeira.</p>
+      </div>
+    </div>
+  </div>
+  <a class="text-link" href="/projetos/arquitetura-financeira/">
+    Entenda a arquitetura e minha contribuição <span aria-hidden="true">↗</span>
+  </a>
+</section>
+<section
+  class="shell section-space"
+  id="trabalho"
+  aria-labelledby="projects-title"
+>
+  <span id="projetos" class="v2-anchor"></span>
+  <div class="v2-section-top">
+    <p class="eyebrow">Projetos em profundidade</p>
+    <span class="v2-index">02 / CONSTRUÇÃO</span>
+  </div>
+  <div class="v2-heading-row">
+    <h2 id="projects-title">
+      O que construí.
+      <br />
+      <span>Como fiz acontecer.</span>
+    </h2>
+    <p>
+      Contexto, contribuição pessoal, decisões e resultados. Seis recortes de
+      uma atuação que atravessa produto, arquitetura e operação.
+    </p>
+  </div>
+  <div class="v2-project-grid">
+    {caseStudies.map((study, index) => (
+      <a
+        class="v2-project"
+        href={`/projetos/${study.slug}/`}
+        data-accent={study.accent}
+        data-reveal
+      >
+        <div class="v2-project-top">
+          <span>0{index + 1}</span>
+          <span aria-hidden="true">↗</span>
+        </div>
+        <p class="v2-category">{study.category}</p>
+        <h3>{study.title}</h3>
+        <p>{study.subtitle}</p>
+        <div class="v2-project-role">{study.role}</div>
+        <div class="v2-project-tags">
+          {study.stack.slice(0, 3).map((tag) => (
+            <span>{tag}</span>
+          ))}
+        </div>
+        <span class="v2-read">
+          Explorar projeto <span aria-hidden="true">→</span>
+        </span>
+      </a>
+    ))}
+  </div>
+</section>
+<section
+  class="v2-expertise shell section-space"
+  id="abordagem"
+  aria-labelledby="expertise-title"
+>
+  <div class="v2-section-top">
+    <p class="eyebrow">Engenharia de ponta a ponta</p>
+    <span class="v2-index">03 / REPERTÓRIO</span>
+  </div>
+  <h2 id="expertise-title">
+    Profundidade técnica.
+    <br />
+    <span>Visão do todo.</span>
+  </h2>
+  <div class="v2-expertise-grid">
+    {expertise.map(([number, title, body, stack]) => (
+      <article class="v2-expertise-card" data-reveal>
+        <span class="v2-number">{number}</span>
+        <h3>{title}</h3>
+        <p>{body}</p>
+        <p class="v2-stack">{stack}</p>
+      </article>
+    ))}
+  </div>
+  <div class="v2-motion-bar">
+    <p>
+      Um pouco de movimento ajuda a contar a história. Você escolhe o ritmo.
+    </p>
+    <button
+      class="motion-toggle"
+      data-motion-toggle
+      hidden
+      aria-pressed="false"
+    >
+      <span data-motion-label>Reduzir movimento</span>
+    </button>
+  </div>
+</section>
+<section
+  class="v2-leadership shell section-space"
+  aria-labelledby="leadership-title"
+>
+  <div class="v2-section-top">
+    <p class="eyebrow">Liderar também é construir</p>
+    <span class="v2-index">04 / PESSOAS</span>
+  </div>
+  <div class="v2-heading-row">
+    <h2 id="leadership-title">
+      Código, decisões
+      <br />
+      <span>e colaboração.</span>
+    </h2>
+    <p>
+      Cinco anos como professor de tecnologia mudaram minha forma de liderar:
+      explicitar o raciocínio, compartilhar conhecimento e criar espaço para
+      autonomia.
+    </p>
+  </div>
+  <div class="v2-leadership-grid">
+    <article data-reveal>
+      <span>01 / PRODUTO & FINANCEIRO</span>
+      <h3>Traduzir o negócio em arquitetura.</h3>
+      <p>
+        Conduzi a construção do Livro Razão junto ao Product Manager, tomando
+        decisões de arquitetura para levar dados corretos ao ERP. A gestão
+        convive com a responsabilidade técnica.
+      </p>
+    </article>
+    <article data-reveal>
+      <span>02 / SEGURANÇA & OPERAÇÃO</span>
+      <h3>Saber quem mudou o quê.</h3>
+      <p>
+        Iniciei a substituição de contas administrativas compartilhadas por
+        acessos individuais com Keycloak e participei da implementação de
+        auditoria com autor e estados antes e depois.
+      </p>
+    </article>
+    <article data-reveal>
+      <span>03 / QUALIDADE & TIME</span>
+      <h3>Dar condições para entregar.</h3>
+      <p>
+        Construí pipelines de testes, análise de código e build para novos
+        projetos. Trabalho com SRE na infraestrutura e com o time em revisões,
+        mentoria, contratação e compartilhamento de conhecimento.
+      </p>
+    </article>
+  </div>
+</section>
+<section
+  class="shell section-space"
+  id="trajetoria"
+  aria-labelledby="career-title"
+>
+  <div class="v2-section-top">
+    <p class="eyebrow">A trajetória inteira importa</p>
+    <span class="v2-index">05 / PERCURSO</span>
+  </div>
+  <h2 id="career-title">
+    Tecnologia. Ensino.
+    <br />
+    <span>Construção contínua.</span>
+  </h2>
+  <p class="v2-lead">
+    De TI e educação à engenharia de produtos e à liderança de pagamentos.
+    Papéis que se ampliam, mantendo a proximidade com a implementação.
+  </p>
+  <div class="v2-career">
+    {career.map((item, index) => (
+      <article class="v2-career-row" data-reveal>
+        <div class="v2-career-date">
+          <span
+            class:list={['v2-career-dot', { 'is-current': index === 0 }]}
+          ></span>
+          {item.date}
+        </div>
+        <div>
+          <h3>{item.company}</h3>
+          {item.roles.map((role) => (
+            <p class="v2-career-role">{role}</p>
+          ))}
+        </div>
+        <p>{item.text}</p>
+      </article>
+    ))}
+  </div>
+  <p class="v2-career-note">
+    Algumas experiências se sobrepõem no calendário, incluindo docência e
+    liderança de squad.
+  </p>
+  <div class="v2-education">
+    <div>
+      <p class="eyebrow">Formação</p>
+      <h3>
+        Aprender faz parte
+        <br />
+        do trabalho.
+      </h3>
+    </div>
+    <div>
+      <p>
+        <strong>
+          MBA em Arquitetura de Software, Ciência de Dados e Cybersecurity
+        </strong>
+        <span>PUC Campinas · 2024–2025</span>
+      </p>
+      <p>
+        <strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong>
+        <span>FATEC São José dos Campos · 2017–2022</span>
+      </p>
+      <p>
+        <strong>Técnico em Redes de Computadores</strong>
+        <span>SENAI São Paulo</span>
+      </p>
+    </div>
+  </div>
+</section>
+<aside class="v2-colophon shell">
+  <span aria-hidden="true">&lt;/&gt;</span>
+  <p>
+    A engenharia desta página: Astro, TypeScript, GSAP e agentes de IA, com
+    conteúdo revisado, verificações executáveis e publicação no GitHub Pages.
+  </p>
+  <a
+    class="text-link"
+    href="https://github.com/rodolfo-santos/rodolfo-santos.github.io"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Ver o código <span aria-hidden="true">↗</span>
+  </a>
+</aside>

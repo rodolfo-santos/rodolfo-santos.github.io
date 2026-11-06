@@ -18,9 +18,13 @@ Commit de produto: 4943568. [CI aprovado](https://github.com/rodolfo-santos/rodo
 
 O README do perfil pessoal recebeu banner e link para o portfólio, preservando sua apresentação e corrigindo apenas o empregador atual para Qeevo Group. Commit direto na main do perfil: 8e49e4a. Banner carregado e links conferidos no navegador. A escrita pelo conector não estava disponível; a alteração foi concluída com a sessão gh já autenticada.
 
+## Segunda versão
+
+Reconstrução editorial e visual integrada: home com transformação financeira concreta, seis páginas de projeto, diagrama fiscal, repertório técnico, liderança, trajetória desde 2014 e formação. Revisão editorial por agente independente, com correções factuais incorporadas. Validação e evidências em REVISAO-V2.md. Commit e publicação seguem diretamente na main, sem PR.
+
 ## Próximo cartão
 
-P01–P04 entregues para a primeira versão. Próximo trabalho depende de feedback do titular: refinamento de fotografia, casos e apresentação. Seleção privada do Google Fotos e métricas de desempenho em campo não foram executadas nesta versão; não converter essas lacunas em fatos ou medições.
+P01–P04 entregues para a primeira versão. A segunda versão aprofunda os casos e a representação profissional. Refinamentos futuros devem preservar a distinção entre construção pessoal, liderança e evolução posterior. Seleção privada do Google Fotos e métricas de desempenho em campo não foram executadas nesta versão; não converter essas lacunas em fatos ou medições.
 
 ## Regras preservadas
 

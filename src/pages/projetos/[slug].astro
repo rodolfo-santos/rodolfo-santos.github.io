@@ -1,0 +1,366 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { caseStudies, type CaseStudy } from '../../content/case-studies';
+import '../../styles/global.css';
+import '../../styles/case-study.css';
+
+export const getStaticPaths = (() =>
+  caseStudies.map((study, index) => ({
+    params: { slug: study.slug },
+    props: {
+      study,
+      nextStudy: caseStudies[(index + 1) % caseStudies.length] ?? null,
+    },
+  }))) satisfies GetStaticPaths;
+
+interface Props {
+  study: CaseStudy;
+  nextStudy: CaseStudy | null;
+}
+
+const { study, nextStudy } = Astro.props;
+const canonical = new URL(`/projetos/${study.slug}/`, Astro.site);
+const pageTitle = `${study.title} | Rodolfo dos Santos`;
+const chapters = [
+  { href: '#contexto', label: 'O desafio' },
+  { href: '#construcao', label: 'Minha contribuição' },
+  { href: '#decisoes', label: 'Decisões de engenharia' },
+  { href: '#resultado', label: 'O que mudou' },
+];
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0d12" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={study.subtitle} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preload"
+      href="/fonts/sora-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/manrope-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={study.subtitle} />
+    <meta property="og:url" content={canonical} />
+    <meta
+      property="og:image"
+      content="https://rodolfo-santos.github.io/images/portrait.webp"
+    />
+    <meta property="og:image:alt" content="Rodolfo dos Santos" />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body class="study-page" data-accent={study.accent}>
+    <a class="skip-link" href="#conteudo">
+      Pular para o conteúdo
+    </a>
+    <div class="reading-progress" data-progress aria-hidden="true"></div>
+
+    <header class="study-header">
+      <div class="study-shell study-header-inner">
+        <a class="study-brand" href="/" aria-label="Rodolfo dos Santos, início">
+          <span class="study-monogram" aria-hidden="true">
+            RS
+          </span>
+          <span>
+            Rodolfo Santos<small>Engenharia, arquitetura e liderança</small>
+          </span>
+        </a>
+        <a class="study-back" href="/#projetos">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M15 10H5m5-5-5 5 5 5" />
+          </svg>
+          <span>Voltar aos projetos</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="study-hero study-shell" aria-labelledby="study-title">
+        <div class="study-hero-main" data-reveal>
+          <p class="study-category">
+            <span aria-hidden="true"></span>
+            {study.category}
+          </p>
+          <h1 id="study-title">{study.title}</h1>
+          <p class="study-subtitle">{study.subtitle}</p>
+        </div>
+        <aside
+          class="study-role"
+          aria-label="Papel e contexto de atuação"
+          data-reveal
+        >
+          <p class="study-role-label">Minha atuação</p>
+          <p class="study-role-value">{study.role}</p>
+          <p class="study-period">{study.period}</p>
+          <div class="study-role-rule" aria-hidden="true"></div>
+          <p class="study-reading-note">
+            Um olhar sobre o problema, as decisões e a construção.
+          </p>
+        </aside>
+      </section>
+
+      <div class="study-layout study-shell">
+        <nav class="study-chapters" aria-label="Nesta história">
+          <span class="study-chapters-label">Nesta história</span>
+          {chapters.map((chapter) => (
+            <a href={chapter.href}>{chapter.label}</a>
+          ))}
+          <a class="study-chapters-contact" href="#conversa">
+            Vamos conversar <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+
+        <div class="study-story">
+          <section
+            class="study-section"
+            id="contexto"
+            aria-labelledby="context-title"
+            data-reveal
+          >
+            <p class="study-section-label">O ponto de partida</p>
+            <h2 id="context-title">O desafio por trás da construção.</h2>
+            <p class="study-context">{study.context}</p>
+            {study.slug === 'servico-fiscal-go' && (
+              <figure
+                class="study-architecture"
+                data-reveal
+                aria-labelledby="architecture-title"
+              >
+                <figcaption class="study-architecture-heading">
+                  <span class="study-section-label">Arquitetura em foco</span>
+                  <h3 id="architecture-title">
+                    Do estado fiscal ao evento publicado.
+                  </h3>
+                  <p>
+                    O fluxo conecta domínio, coordenação do trabalho e
+                    comunicação assíncrona.
+                  </p>
+                </figcaption>
+                <ol
+                  class="study-architecture-flow"
+                  aria-label="Fluxo técnico do serviço fiscal"
+                >
+                  <li>
+                    <span class="study-architecture-marker" aria-hidden="true">
+                      01
+                    </span>
+                    <div class="study-architecture-node">
+                      <span class="study-architecture-layer">Domínio</span>
+                      <h4>Estados e eventos fiscais</h4>
+                      <p>
+                        O modelo de domínio e a máquina de estados organizam o
+                        processamento.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="study-architecture-marker" aria-hidden="true">
+                      02
+                    </span>
+                    <div class="study-architecture-node">
+                      <span class="study-architecture-layer">Coordenação</span>
+                      <h4>Fila persistente em PostgreSQL</h4>
+                      <p>
+                        <code>SKIP LOCKED</code> e fencing controlam a aquisição
+                        de tarefas e a concorrência.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="study-architecture-marker" aria-hidden="true">
+                      03
+                    </span>
+                    <div class="study-architecture-node study-architecture-processor">
+                      <span class="study-architecture-layer">
+                        Execução e recuperação
+                      </span>
+                      <h4>Processador fiscal</h4>
+                      <p>
+                        Circuit breaker e watchdogs compõem o tratamento de
+                        falhas e o acompanhamento das tarefas.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="study-architecture-marker" aria-hidden="true">
+                      04
+                    </span>
+                    <div class="study-architecture-node">
+                      <span class="study-architecture-layer">
+                        Persistência de eventos
+                      </span>
+                      <h4>Outbox transacional</h4>
+                      <p>
+                        Registra os eventos que serão publicados para os
+                        consumidores.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="study-architecture-marker" aria-hidden="true">
+                      05
+                    </span>
+                    <div class="study-architecture-node">
+                      <span class="study-architecture-layer">Comunicação</span>
+                      <h4>Publicação em Kafka</h4>
+                      <p>
+                        Conecta os eventos do serviço à comunicação assíncrona.
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+                <p class="study-architecture-validation">
+                  <span aria-hidden="true"></span>Construção validada
+                  incrementalmente com provedor simulado.
+                </p>
+              </figure>
+            )}
+            <div class="study-change">
+              <div class="study-before">
+                <h3>Cenário anterior</h3>
+                <p>{study.before}</p>
+              </div>
+              <div class="study-after">
+                <h3>O que passou a ser possível</h3>
+                <p>{study.after}</p>
+              </div>
+            </div>
+          </section>
+
+          <section
+            class="study-section"
+            id="construcao"
+            aria-labelledby="contribution-title"
+            data-reveal
+          >
+            <p class="study-section-label">Responsabilidade e execução</p>
+            <h2 id="contribution-title">Onde entrei. O que construí.</h2>
+            <ol class="study-contributions">
+              {study.contribution.map((contribution) => (
+                <li>
+                  <p>{contribution}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          <section
+            class="study-section"
+            id="decisoes"
+            aria-labelledby="decisions-title"
+            data-reveal
+          >
+            <p class="study-section-label">Profundidade técnica</p>
+            <h2 id="decisions-title">As decisões que sustentam a solução.</h2>
+            <div class="study-decisions">
+              {study.decisions.map((decision) => (
+                <article class="study-decision">
+                  <h3>{decision.title}</h3>
+                  <p>{decision.body}</p>
+                </article>
+              ))}
+            </div>
+            <div class="study-stack">
+              <h3>Tecnologias e práticas neste trabalho</h3>
+              <ul aria-label="Tecnologias e práticas">
+                {study.stack.map((technology) => (
+                  <li>{technology}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          <section
+            class="study-section study-result"
+            id="resultado"
+            aria-labelledby="outcomes-title"
+            data-reveal
+          >
+            <p class="study-section-label">Efeito para produto e operação</p>
+            <h2 id="outcomes-title">O que mudou na prática.</h2>
+            <ul class="study-outcomes">
+              {study.outcomes.map((outcome) => (
+                <li>
+                  <span aria-hidden="true"></span>
+                  <p>{outcome}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      {nextStudy && nextStudy.slug !== study.slug && (
+        <section class="study-next study-shell" aria-labelledby="next-title">
+          <div>
+            <p class="study-section-label">Outro capítulo desta trajetória</p>
+            <h2 id="next-title">{nextStudy.title}</h2>
+            <p>{nextStudy.subtitle}</p>
+          </div>
+          <a
+            class="study-next-link"
+            href={`/projetos/${nextStudy.slug}/`}
+            aria-label={`Ler o caso: ${nextStudy.title}`}
+          >
+            <span>Ler o próximo caso</span>
+            <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <path d="M5 14h18m-8-8 8 8-8 8" />
+            </svg>
+          </a>
+        </section>
+      )}
+
+      <section
+        class="study-contact study-shell"
+        id="conversa"
+        aria-labelledby="contact-title"
+        data-reveal
+      >
+        <p class="study-section-label">Software com contexto</p>
+        <h2 id="contact-title">
+          Que desafio podemos
+          <br />
+          resolver juntos?
+        </h2>
+        <p>
+          Vamos conversar sobre engenharia, arquitetura e o próximo desafio do
+          seu produto.
+        </p>
+        <a
+          class="study-contact-link"
+          href="https://linkedin.com/in/rodolfosantos29"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Conversar no LinkedIn <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="study-footer study-shell">
+      <a href="/">Rodolfo dos Santos</a>
+      <a href="/#projetos">
+        Explorar todos os projetos <span aria-hidden="true">↗</span>
+      </a>
+    </footer>
+    <script>
+      import '../../scripts/motion';
+    </script>
+  </body>
+</html>
