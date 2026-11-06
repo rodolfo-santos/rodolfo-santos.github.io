@@ -12,15 +12,15 @@ Conceito: engenharia em movimento. O visitante entra pela pessoa, explora sistem
 
 A imagem One Peak fornecida pelo titular é a principal referência: atmosfera escura, luz violeta, retrato marcante e profundidade. Adaptar a linguagem a um portfólio pessoal com identidade própria.
 
-| Token | Cor | Aplicação |
-|---|---|---|
-| Grafite | #0B0D12 | Fundo principal |
-| Superfície | #141722 | Camadas e painéis |
-| Texto | #F3F1F7 | Títulos e leitura |
-| Texto de apoio | #B9BDCB | Descrições |
-| Violeta | #A78BFA | Luz e ações principais |
-| Azul | #818CF8 | Profundidade e conexões |
-| Menta | #70E1C8 | Ênfase pontual |
+| Token          | Cor     | Aplicação               |
+| -------------- | ------- | ----------------------- |
+| Grafite        | #0B0D12 | Fundo principal         |
+| Superfície     | #141722 | Camadas e painéis       |
+| Texto          | #F3F1F7 | Títulos e leitura       |
+| Texto de apoio | #B9BDCB | Descrições              |
+| Violeta        | #A78BFA | Luz e ações principais  |
+| Azul           | #818CF8 | Profundidade e conexões |
+| Menta          | #70E1C8 | Ênfase pontual          |
 
 Base majoritariamente neutra; cores vívidas concentradas nos pontos de atenção. Contraste deve ser medido na implementação, incluindo botões e estados de foco.
 
@@ -40,14 +40,14 @@ Composição assimétrica no desktop, texto e retrato em diálogo. No celular, t
 
 ## Movimento
 
-| Momento | Comportamento |
-|---|---|
-| Entrada | Sequência coordenada de nome, retrato e luz, sem impedir a leitura |
-| Hero | Halo discreto e profundidade suave; efeito de ponteiro somente em dispositivo adequado |
-| Casos | Transições distintas conforme a narrativa, sem repetir fade em todos os blocos |
-| Diagrama | Conexões e etapas respondem ao progresso da rolagem |
-| Trajetória | Indicador luminoso acompanha o avanço |
-| Ações | Hover e foco com resposta visual clara |
+| Momento    | Comportamento                                                                          |
+| ---------- | -------------------------------------------------------------------------------------- |
+| Entrada    | Sequência coordenada de nome, retrato e luz, sem impedir a leitura                     |
+| Hero       | Halo discreto e profundidade suave; efeito de ponteiro somente em dispositivo adequado |
+| Casos      | Transições distintas conforme a narrativa, sem repetir fade em todos os blocos         |
+| Diagrama   | Conexões e etapas respondem ao progresso da rolagem                                    |
+| Trajetória | Indicador luminoso acompanha o avanço                                                  |
+| Ações      | Hover e foco com resposta visual clara                                                 |
 
 Preferir transform e opacity, 450–800 ms para transições usuais. Rolagem nativa. Sem cursor substituto, áudio automático, flashes ou carregador bloqueante. Desligar parallax e fixações longas no celular. Modo de movimento reduzido mantém a composição estática e o conteúdo completo.
 
@@ -69,15 +69,15 @@ Planejar um retrato principal e duas imagens de contexto, preferindo fotos indiv
 
 Pesquisa de direção visual e pesquisa de skills realizadas por dois agentes especializados. Terceiro agente responsável pela revisão de posicionamento. Integração, curadoria e preparação do repositório sob responsabilidade do agente principal. Equipe interna da sessão; o canvas Maestri não estava conectado.
 
-| Etapa | Entrega | Estado |
-|---|---|---|
-| Descoberta | Referências, direção e skills oficiais | Concluída |
-| Planejamento | Roteiro, movimento e arquitetura | Concluído |
-| Fotografia | Seleção privada com identidade confirmada | Em andamento |
-| Direção em tela | Hero e uma seção de caso em desktop e celular | Pendente |
-| Implementação | Página completa e movimento responsivo | Pendente |
-| Revisão | Conteúdo, navegação, acessibilidade e desempenho | Pendente |
-| Publicação | Pages funcional e entrada no perfil | Pendente |
+| Etapa           | Entrega                                          | Estado       |
+| --------------- | ------------------------------------------------ | ------------ |
+| Descoberta      | Referências, direção e skills oficiais           | Concluída    |
+| Planejamento    | Roteiro, movimento e arquitetura                 | Concluído    |
+| Fotografia      | Seleção privada com identidade confirmada        | Em andamento |
+| Direção em tela | Hero e uma seção de caso em desktop e celular    | Pendente     |
+| Implementação   | Página completa e movimento responsivo           | Pendente     |
+| Revisão         | Conteúdo, navegação, acessibilidade e desempenho | Pendente     |
+| Publicação      | Pages funcional e entrada no perfil              | Pendente     |
 
 A próxima entrega é uma primeira composição real do hero e do diagrama, usando conteúdo publicável. Essa composição permite avaliar cores, retrato e movimento antes de expandir a página.
 

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "includes": [
+      "**/*.mjs",
+      "**/*.ts",
+      "!**/node_modules",
+      "!**/dist",
+      "!**/.astro",
+      "!**/reports"
+    ]
+  },
+  "formatter": { "enabled": false },
+  "linter": { "enabled": true, "rules": { "preset": "recommended" } },
+  "assist": { "enabled": false }
+}

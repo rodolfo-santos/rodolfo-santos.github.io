@@ -1,0 +1,37 @@
+{
+  "name": "rodolfo-santos-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.14.1 <25"
+  },
+  "scripts": {
+    "dev": "node scripts/astro.mjs dev --host 127.0.0.1",
+    "build": "node scripts/astro.mjs build",
+    "preview": "node scripts/astro.mjs preview --host 127.0.0.1",
+    "lint": "biome lint .",
+    "typecheck": "node scripts/astro.mjs check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "node --test tests/*.test.mjs",
+    "privacy": "node scripts/check-public.mjs",
+    "privacy:staged": "node scripts/check-public.mjs --staged",
+    "verify": "npm run privacy && npm run lint && npm run format:check && npm run typecheck && npm test && npm run build",
+    "harness": "harness-score . --min-level 3",
+    "harness:report": "node scripts/harness-report.mjs",
+    "prepare": "node scripts/install-hooks.mjs"
+  },
+  "dependencies": {
+    "astro": "7.4.7",
+    "gsap": "3.15.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@biomejs/biome": "2.6.6",
+    "harness-score": "1.8.4",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.2",
+    "typescript": "6.0.3"
+  }
+}

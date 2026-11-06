@@ -1,0 +1,1 @@
+Use .agents/skills/portfolio-main/SKILL.md para conferir o diff, executar verify e harness, atualizar o estado e entregar somente as mudanças deste trabalho por commit e push na main. Não abrir PR, não usar force push e não publicar o site inacabado.

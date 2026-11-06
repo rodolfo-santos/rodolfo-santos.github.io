@@ -1,15 +1,54 @@
 # Instruções do portfólio
 
-Idioma inicial: pt-BR. Projeto estático para GitHub Pages. Leia docs/PLANO.md e docs/REFERENCIAS.md antes de implementar.
+## Entrada
 
-Preservar a referência fornecida pelo titular: tema escuro confortável, violeta luminoso, fotografia real, profundidade e animação ligada à rolagem. Manter legibilidade e navegação natural no celular.
+Portfólio pessoal de Rodolfo dos Santos, em pt-BR, estático e destinado ao GitHub Pages.
+Leia HARNESS.md para operar e docs/ESTADO.md para retomar a entrega atual.
+Leia docs/PLANO.md e docs/REFERENCIAS.md antes de implementar a apresentação.
+O harness prepara a construção; a página inicial atual é apenas uma base de desenvolvimento.
 
-Somente conteúdo preparado para publicação entra neste repositório público. Não copiar acervos de carreira, currículos privados, notas de candidatura, pretensão salarial, fontes internas ou endereços privados. Diagramas são conceituais, sem topologia de produção. Métricas e depoimentos exigem comprovação e autorização de publicação.
+## Git: direto na main
 
-Fotos originais e listas de candidatos ficam fora do repositório. Publicar apenas a seleção final, com metadados pessoais removidos e identidade confirmada pelo titular. Não atribuir identidade a alguém por comparação de rosto.
+Preferência explícita do titular em 06/11/2026: trabalhar na main, fazer commit e push diretamente.
+Não abrir PR, não criar branch de feature e não pedir aprovação de PR como etapa habitual.
+Validar antes do push. Usar git add com caminhos explícitos e revisar git diff --cached.
+Não usar force push, apagar histórico ou contornar hooks com --no-verify.
+Se origin/main avançar, integrar sem sobrescrever trabalho alheio e repetir os checks afetados.
+Push de código e publicação do site são ações distintas; o deploy tem comando manual no GitHub Actions.
 
-Conteúdo legível sem JavaScript. Respeitar prefers-reduced-motion e navegação por teclado. Não usar scroll hijacking, carregamento bloqueante ou efeitos piscantes.
+## Comandos
 
-Antes da publicação: build, links, revisão factual e inspeção visual em desktop e celular, incluindo redução de movimento. Não declarar que houve teste ou deploy sem resultado verificável.
+- npm ci: instala versões do lockfile e ativa os hooks locais de Git.
+- npm run dev: abre o ambiente Astro de desenvolvimento.
+- npm run format: formata arquivos; revisar o diff depois.
+- npm run verify: privacidade, lint, formatação, tipos, testes e build.
+- npm run harness: executa harness-score, exigindo pelo menos L3.
+- npm run harness:report: grava JSON e Markdown em reports/ (ignorados pelo Git).
+- npm run preview: serve o build estático em localhost.
 
-PRs em pt-BR, sem emojis ou travessões. Seções: Resumo; Problema / motivação; O que muda para o usuário; Impacto e escopo; Como testar / validar; Detalhes técnicos (para devs). Incluir imagens para mudanças visuais e atribuição de IA sem emoji.
+## Arquitetura e qualidade
+
+Astro estático, CSS próprio, TypeScript estrito e GSAP/ScrollTrigger.
+src/ contém a interface; scripts/ e tests/ mantêm o harness executável.
+.agents/skills/ contém procedimentos específicos e portáveis deste projeto.
+Não introduzir servidor, banco, login ou integrações remotas sem necessidade do produto.
+Preservar grafite, violeta luminoso, fotografia real, profundidade e movimento ligado à rolagem.
+Conteúdo legível sem JavaScript; respeitar prefers-reduced-motion e navegação por teclado.
+Não usar scroll hijacking, carregamento bloqueante, flashes ou efeitos que prejudiquem o celular.
+Mudança visual exige inspeção de desktop/mobile e evidência real antes de declarar revisão visual.
+
+## Conteúdo e privacidade
+
+Somente conteúdo preparado para publicação entra neste repositório público.
+Não copiar acervo de carreira, notas de candidatura, pretensão salarial, fontes internas ou URLs privadas.
+Diagramas são conceituais; preservar contribuição pessoal, cronologia e limites de autoria.
+Métricas e depoimentos exigem comprovação; não inventar contadores para decorar a página.
+Fotos originais, candidatos e fontes ficam fora do repositório; publicar só derivados finais confirmados, sem metadados pessoais.
+Não atribuir identidade por comparação facial. Não publicar foto cuja pessoa retratada ainda não foi confirmada.
+
+## Encerramento e recuperação
+
+Atualizar docs/ESTADO.md com entrega, validação, limitações e próximo passo concreto.
+Só declarar testes, nota, revisão visual ou deploy depois de verificar o resultado correspondente.
+Registrar falhas reais em docs/APRENDIZADOS.md, com correção e prevenção proporcionais.
+Não inflar a nota do scanner com testes vazios, configurações sem uso ou integração fictícia.

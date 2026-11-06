@@ -16,11 +16,11 @@ O Pinterest não abriu pelo mecanismo de busca web da pesquisa inicial; foi cons
 
 Instalação realizada pelo instalador oficial do Codex, a partir dos repositórios originais. Disponíveis no diretório pessoal de skills na próxima interação. Não fazem parte do bundle público do site.
 
-| Skill | Origem | Licença da skill |
-|---|---|---|
-| frontend-design | https://github.com/anthropics/skills/tree/main/skills/frontend-design | Apache-2.0 |
-| gsap-core | https://github.com/greensock/gsap-skills/tree/main/skills/gsap-core | MIT |
-| gsap-scrolltrigger | https://github.com/greensock/gsap-skills/tree/main/skills/gsap-scrolltrigger | MIT |
+| Skill              | Origem                                                                       | Licença da skill |
+| ------------------ | ---------------------------------------------------------------------------- | ---------------- |
+| frontend-design    | https://github.com/anthropics/skills/tree/main/skills/frontend-design        | Apache-2.0       |
+| gsap-core          | https://github.com/greensock/gsap-skills/tree/main/skills/gsap-core          | MIT              |
+| gsap-scrolltrigger | https://github.com/greensock/gsap-skills/tree/main/skills/gsap-scrolltrigger | MIT              |
 
 Instaladas a partir de main nesta data. Hashes dos arquivos SKILL.md preservados no registro privado de preparação; a instalação não fixou um commit upstream. Revalidar antes de atualização. As licenças das skills não substituem a licença da biblioteca GSAP.
 

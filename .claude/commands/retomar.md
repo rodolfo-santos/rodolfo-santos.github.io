@@ -1,0 +1,1 @@
+Leia AGENTS.md, HARNESS.md e docs/ESTADO.md. Execute o próximo cartão de docs/IMPLEMENTACAO.md com a skill local .agents/skills/portfolio-feature/SKILL.md quando houver interface. Trabalhe na main, valide e entregue por commit/push direto, sem PR.

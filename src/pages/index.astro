@@ -1,0 +1,54 @@
+---
+// Base executável para construir o portfólio. Não representa a direção visual final.
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Rodolfo dos Santos | Portfólio em desenvolvimento</title>
+    <meta
+      name="description"
+      content="Engenharia de software, arquitetura, pagamentos e liderança."
+    />
+  </head>
+  <body>
+    <main>
+      <p>Portfólio em desenvolvimento</p>
+      <h1>Rodolfo dos Santos</h1>
+      <p>Engenharia de software, arquitetura, pagamentos e liderança.</p>
+      <a href="https://github.com/rodolfo-santos">Meu GitHub</a>
+    </main>
+  </body>
+</html>
+
+<style>
+  :global(html) {
+    color-scheme: dark;
+    background: #0b0d12;
+    color: #f3f1f7;
+    font-family: system-ui, sans-serif;
+  }
+  :global(body) {
+    margin: 0;
+  }
+  main {
+    max-width: 65ch;
+    margin: 15vh auto;
+    padding: 1.5rem;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: clamp(2rem, 7vw, 4rem);
+    line-height: 1.1;
+  }
+  a {
+    color: #a78bfa;
+  }
+  a:focus-visible {
+    outline: 2px solid #70e1c8;
+    outline-offset: 5px;
+  }
+</style>
