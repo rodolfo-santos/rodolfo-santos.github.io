@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-labelledby="title description">
+  <title id="title">Conheça o portfólio de Rodolfo dos Santos</title>
+  <desc id="description">Engenharia de software, arquitetura, pagamentos e liderança.</desc>
+  <defs>
+    <linearGradient id="surface" x2="1" y2=".4"><stop stop-color="#10121b"/><stop offset="1" stop-color="#18122c"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#8b5cf6" stop-opacity=".45"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="line"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#70e1c8"/></linearGradient>
+  </defs>
+  <rect x="1" y="1" width="1198" height="278" rx="24" fill="url(#surface)" stroke="#343043"/>
+  <ellipse cx="1030" cy="160" rx="280" ry="230" fill="url(#glow)"/>
+  <g fill="none" stroke="url(#line)" opacity=".5">
+    <circle cx="1040" cy="140" r="93"/><circle cx="1040" cy="140" r="117" opacity=".3"/>
+    <path d="M877 140h72m182 0h68M1040 1v46m0 186v46"/>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <text x="54" y="63" fill="#b8a3ef" font-size="18">Rodolfo dos Santos</text>
+    <text x="54" y="119" fill="#f3f1f7" font-size="35" font-weight="700">Engenharia que conecta</text>
+    <text x="54" y="163" fill="#f3f1f7" font-size="35" font-weight="700">sistemas e pessoas.</text>
+    <text x="54" y="218" fill="#b9bdcb" font-size="17">Arquitetura · Pagamentos · Produtos web · IA</text>
+    <text x="962" y="154" fill="#e0d5ff" font-size="48" font-weight="700">RS</text>
+    <path d="M1100 130l12 10-12 10m-13-10h24" fill="none" stroke="#70e1c8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

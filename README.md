@@ -2,7 +2,9 @@
 
 Portfólio pessoal de engenharia de software, arquitetura, pagamentos e liderança.
 
-Base de desenvolvimento com Astro estático, TypeScript estrito, GSAP e harness executável. A apresentação visual completa ainda está em construção.
+Portfólio com apresentação pessoal, casos de pagamentos/produtos/IA, diagrama conceitual animado, trajetória e contato. Construído com Astro estático, TypeScript estrito, GSAP e harness executável.
+
+Endereço: https://rodolfo-santos.github.io
 
 ## Começar
 
@@ -32,6 +34,7 @@ O push aciona o CI. O deploy do Pages é manual e separado, depois da revisão d
 
 - [Harness e operação](HARNESS.md)
 - [Avaliação: L4, 103/105](docs/HARNESS-SCORE.md)
+- [Revisão da primeira versão](docs/REVISAO-V1.md)
 - [Estado para retomar](docs/ESTADO.md)
 - [Cartões de implementação](docs/IMPLEMENTACAO.md)
 - [Plano do projeto](docs/PLANO.md)

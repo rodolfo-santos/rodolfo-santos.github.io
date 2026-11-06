@@ -5,7 +5,7 @@
 Portfólio pessoal de Rodolfo dos Santos, em pt-BR, estático e destinado ao GitHub Pages.
 Leia HARNESS.md para operar e docs/ESTADO.md para retomar a entrega atual.
 Leia docs/PLANO.md e docs/REFERENCIAS.md antes de implementar a apresentação.
-O harness prepara a construção; a página inicial atual é apenas uma base de desenvolvimento.
+A primeira versão da página está implementada; confira docs/ESTADO.md para revisão e publicação.
 
 ## Git: direto na main
 
@@ -36,6 +36,12 @@ Preservar grafite, violeta luminoso, fotografia real, profundidade e movimento l
 Conteúdo legível sem JavaScript; respeitar prefers-reduced-motion e navegação por teclado.
 Não usar scroll hijacking, carregamento bloqueante, flashes ou efeitos que prejudiquem o celular.
 Mudança visual exige inspeção de desktop/mobile e evidência real antes de declarar revisão visual.
+
+## Orquestração
+
+Preferência explícita do titular em 06/11/2026: o agente principal atua como orquestrador e delega trabalhos especializados, em paralelo ou de forma assíncrona quando útil.
+Separar responsabilidades e arquivos antes de delegar para evitar edições concorrentes. Reutilizar agentes que já conhecem a tarefa quando fizer sentido.
+O orquestrador integra as entregas, verifica o resultado no navegador e concentra commits, push e deploy. Uma mensagem de conclusão de um agente não substitui a validação integrada.
 
 ## Conteúdo e privacidade
 

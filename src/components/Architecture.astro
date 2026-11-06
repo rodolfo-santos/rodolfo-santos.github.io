@@ -1,0 +1,650 @@
+<section
+  id="abordagem"
+  class="architecture-section"
+  aria-labelledby="architecture-title"
+  data-architecture
+>
+  <div class="architecture-shell">
+    <div class="architecture-heading" data-reveal>
+      <p class="section-note">
+        <span aria-hidden="true"></span> Como eu construo
+      </p>
+      <h2 id="architecture-title">
+        Do problema
+        <br />à operação.
+      </h2>
+      <p class="architecture-intro">
+        Um sistema faz sentido quando as partes funcionam juntas. Conecto
+        decisões de arquitetura, implementação e operação ao que o produto
+        precisa entregar.
+      </p>
+    </div>
+
+    <div class="architecture-scene" data-flow-scene>
+      <div class="architecture-topline">
+        <span class="scene-status">
+          <span></span> Pensamento de ponta a ponta
+        </span>
+        <button
+          class="motion-control"
+          type="button"
+          data-motion-toggle
+          aria-pressed="false"
+          hidden
+        >
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 3v10M11 3v10"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span data-motion-label>Reduzir movimento</span>
+        </button>
+      </div>
+      <svg
+        class="flow-diagram"
+        viewBox="0 0 840 410"
+        role="img"
+        aria-labelledby="flow-title flow-description"
+      >
+        <title id="flow-title">Do produto à operação financeira</title>
+        <desc id="flow-description">
+          Diagrama conceitual: produto e checkout se conectam a pagamentos.
+          Eventos conectam o processamento à operação financeira.
+          Observabilidade e qualidade acompanham todo o fluxo.
+        </desc>
+        <defs>
+          <linearGradient id="flow-line-gradient" x1="0" y1="0" x2="1" y2="0">
+            <stop stop-color="#A78BFA" />
+            <stop offset=".55" stop-color="#818CF8" />
+            <stop offset="1" stop-color="#70E1C8" />
+          </linearGradient>
+          <linearGradient id="flow-node-gradient" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#252039" />
+            <stop offset="1" stop-color="#151722" />
+          </linearGradient>
+          <radialGradient id="flow-halo">
+            <stop stop-color="#8B5CF6" stop-opacity=".2" />
+            <stop offset="1" stop-color="#8B5CF6" stop-opacity="0" />
+          </radialGradient>
+          <pattern
+            id="flow-grid"
+            width="32"
+            height="32"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M 32 0 L 0 0 0 32"
+              fill="none"
+              stroke="#A78BFA"
+              stroke-opacity=".06"
+            />
+          </pattern>
+        </defs>
+        <rect width="840" height="410" fill="url(#flow-grid)" />
+        <ellipse cx="420" cy="190" rx="340" ry="180" fill="url(#flow-halo)" />
+        <g class="flow-track" fill="none" stroke="#333347" stroke-width="1.5">
+          <path d="M188 192 H248" />
+          <path d="M398 192 H458" />
+          <path d="M608 192 H668" />
+          <path
+            d="M113 238 V301 Q113 313 125 313 H731 Q743 313 743 301 V238"
+            stroke-dasharray="4 7"
+          />
+          <path d="M323 238 V313 M533 238 V313" stroke-dasharray="4 7" />
+        </g>
+        <g
+          fill="none"
+          stroke="url(#flow-line-gradient)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        >
+          <path data-flow-path d="M188 192 H248" />
+          <path data-flow-path d="M398 192 H458" />
+          <path data-flow-path d="M608 192 H668" />
+          <path
+            data-flow-path
+            d="M113 238 V301 Q113 313 125 313 H731 Q743 313 743 301 V238"
+            opacity=".55"
+          />
+        </g>
+        <g data-flow-node class="flow-node">
+          <rect x="38" y="146" width="150" height="92" rx="18" />
+          <g class="node-icon" transform="translate(99 116)">
+            <rect width="28" height="22" rx="5" />
+            <path d="M7 7H21 M7 13H16" />
+          </g>
+          <text x="113" y="185" class="node-title">
+            Produto
+          </text>
+          <text x="113" y="207" class="node-caption">
+            Checkout
+          </text>
+          <circle cx="188" cy="192" r="4" class="node-port" />
+        </g>
+        <g data-flow-node class="flow-node flow-node-primary">
+          <rect x="248" y="146" width="150" height="92" rx="18" />
+          <g class="node-icon" transform="translate(309 116)">
+            <rect width="28" height="22" rx="5" />
+            <path d="M1 7H27 M6 15H12" />
+          </g>
+          <text x="323" y="185" class="node-title">
+            Pagamentos
+          </text>
+          <text x="323" y="207" class="node-caption">
+            Orquestração
+          </text>
+          <circle cx="248" cy="192" r="4" class="node-port" />
+          <circle cx="398" cy="192" r="4" class="node-port" />
+        </g>
+        <g data-flow-node class="flow-node">
+          <rect x="458" y="146" width="150" height="92" rx="18" />
+          <g class="node-icon" transform="translate(519 116)">
+            <path d="M2 6H26 M2 13H26 M2 20H26" />
+            <circle cx="8" cy="6" r="2.5" />
+            <circle cx="21" cy="13" r="2.5" />
+            <circle cx="12" cy="20" r="2.5" />
+          </g>
+          <text x="533" y="185" class="node-title">
+            Eventos
+          </text>
+          <text x="533" y="207" class="node-caption">
+            Integrações
+          </text>
+          <circle cx="458" cy="192" r="4" class="node-port" />
+          <circle cx="608" cy="192" r="4" class="node-port" />
+        </g>
+        <g data-flow-node class="flow-node flow-node-mint">
+          <rect x="668" y="146" width="150" height="92" rx="18" />
+          <g class="node-icon" transform="translate(729 116)">
+            <path d="M1 22V10 M10 22V3 M19 22V14 M28 22V7" />
+          </g>
+          <text x="743" y="185" class="node-title">
+            Financeiro
+          </text>
+          <text x="743" y="207" class="node-caption">
+            Conciliação
+          </text>
+          <circle cx="668" cy="192" r="4" class="node-port" />
+        </g>
+        <g class="flow-foundation">
+          <rect x="284" y="294" width="284" height="38" rx="19" />
+          <circle cx="308" cy="313" r="3" />
+          <text x="433" y="318">
+            Qualidade e observabilidade
+          </text>
+        </g>
+        <g class="flow-particle" data-flow-particle aria-hidden="true">
+          <circle cx="218" cy="192" r="3" fill="#D9C9FF" />
+          <circle cx="218" cy="192" r="8" fill="#A78BFA" opacity=".12" />
+        </g>
+      </svg>
+      <ol
+        class="mobile-flow"
+        aria-label="Fluxo conceitual do produto ao financeiro"
+      >
+        <li data-flow-node>
+          <span class="mobile-flow-dot" aria-hidden="true"></span>
+          <span>
+            Produto<strong>Checkout</strong>
+          </span>
+          <span class="mobile-flow-arrow" aria-hidden="true">
+            ↓
+          </span>
+        </li>
+        <li data-flow-node>
+          <span class="mobile-flow-dot" aria-hidden="true"></span>
+          <span>
+            Pagamentos<strong>Orquestração</strong>
+          </span>
+          <span class="mobile-flow-arrow" aria-hidden="true">
+            ↓
+          </span>
+        </li>
+        <li data-flow-node>
+          <span class="mobile-flow-dot" aria-hidden="true"></span>
+          <span>
+            Eventos<strong>Integrações</strong>
+          </span>
+          <span class="mobile-flow-arrow" aria-hidden="true">
+            ↓
+          </span>
+        </li>
+        <li data-flow-node>
+          <span class="mobile-flow-dot" aria-hidden="true"></span>
+          <span>
+            Financeiro<strong>Conciliação</strong>
+          </span>
+          <span class="mobile-flow-arrow" aria-hidden="true">
+            ↗
+          </span>
+        </li>
+      </ol>
+      <div class="architecture-bottomline">
+        <span>Decisões conectadas. Operação compreensível.</span>
+        <span aria-hidden="true">↗</span>
+      </div>
+    </div>
+
+    <div class="architecture-principles">
+      <article class="principle" data-reveal>
+        <div class="principle-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3 3 8l9 5 9-5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5" />
+          </svg>
+        </div>
+        <h3>Arquitetura com contexto</h3>
+        <p>
+          Entender o domínio, escolher limites e desenhar como os sistemas
+          conversam. A decisão técnica começa no problema.
+        </p>
+      </article>
+      <article class="principle" data-reveal>
+        <div class="principle-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="m8 6-6 6 6 6M16 6l6 6-6 6M14 3l-4 18" />
+          </svg>
+        </div>
+        <h3>Implementação de verdade</h3>
+        <p>
+          Construir do backend à experiência web, conectar integrações e usar
+          testes e IA para apoiar a entrega.
+        </p>
+      </article>
+      <article class="principle" data-reveal>
+        <div class="principle-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M2 12h4l3-8 6 16 3-8h4" />
+          </svg>
+        </div>
+        <h3>Responsabilidade na operação</h3>
+        <p>
+          Acompanhar os sinais, investigar falhas e evoluir com o time. O
+          trabalho continua depois que o código entra em produção.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .architecture-section {
+    position: relative;
+    padding: clamp(5rem, 10vw, 9rem) 0;
+    scroll-margin-top: 7rem;
+    isolation: isolate;
+  }
+  .architecture-section::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 8% 0 10%;
+    background: radial-gradient(ellipse at 50% 45%, #6d3adc0e, transparent 65%);
+    pointer-events: none;
+  }
+  .architecture-shell {
+    width: min(1240px, calc(100% - 6rem));
+    margin-inline: auto;
+  }
+  .architecture-heading {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 5rem;
+    align-items: end;
+    margin-bottom: 3rem;
+  }
+  .section-note {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.65rem;
+    align-items: center;
+    color: #b5a1ef;
+    font-size: 0.82rem;
+    font-weight: 500;
+    margin: 0 0 1.5rem;
+  }
+  .section-note span {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #a78bfa;
+    box-shadow: 0 0 14px #a78bfa66;
+  }
+  .architecture-heading h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.5rem, 5.7vw, 4.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.055em;
+    margin: 0;
+    color: #f3f1f7;
+  }
+  .architecture-intro {
+    max-width: 44ch;
+    margin: 0 0 0.2rem;
+    color: #b9bdcb;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  .architecture-scene {
+    position: relative;
+    background: linear-gradient(135deg, #1a1726 0%, #11131c 48%, #111a20 100%);
+    border: 1px solid #a78bfa26;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow:
+      0 40px 100px -70px #8b5cf666,
+      inset 0 1px 0 #ffffff06;
+  }
+  .architecture-topline,
+  .architecture-bottomline {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    font-size: 0.75rem;
+    color: #9ca2b6;
+  }
+  .architecture-topline {
+    border-bottom: 1px solid #ffffff08;
+  }
+  .architecture-bottomline {
+    border-top: 1px solid #ffffff08;
+  }
+  .architecture-bottomline > span:last-child {
+    color: #a78bfa;
+    font-size: 1.35rem;
+  }
+  .scene-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #d4c8f5;
+  }
+  .scene-status > span {
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background: #70e1c8;
+    box-shadow: 0 0 10px #70e1c85c;
+  }
+  .motion-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.65rem;
+    margin: -0.45rem -0.65rem -0.45rem 0;
+    border: 1px solid #a78bfa20;
+    border-radius: 7px;
+    font: inherit;
+    color: #bdb5d0;
+    background: #a78bfa06;
+    cursor: pointer;
+  }
+  .motion-control[hidden] {
+    display: none;
+  }
+  .motion-control:hover {
+    border-color: #a78bfa66;
+    color: #eee7ff;
+  }
+  .motion-control:focus-visible {
+    outline: 2px solid #70e1c8;
+    outline-offset: 4px;
+  }
+  .motion-control[aria-pressed='true'] {
+    color: #70e1c8;
+    border-color: #70e1c833;
+  }
+  .motion-control:disabled {
+    cursor: default;
+  }
+  .flow-diagram {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .mobile-flow {
+    display: none;
+  }
+  .flow-node > rect {
+    fill: url(#flow-node-gradient);
+    stroke: #a78bfa40;
+    stroke-width: 1;
+  }
+  .flow-node-primary > rect {
+    stroke: #b39aff9c;
+    fill: #2a2140;
+  }
+  .flow-node-mint > rect {
+    stroke: #70e1c84d;
+    fill: #15272a;
+  }
+  .node-title {
+    fill: #f1ecff;
+    text-anchor: middle;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.25px;
+  }
+  .node-caption {
+    fill: #a9a7be;
+    text-anchor: middle;
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+  }
+  .node-icon {
+    stroke: #b39aff;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+  .flow-node-mint .node-icon {
+    stroke: #70e1c8;
+  }
+  .node-port {
+    fill: #c4b5fd;
+    stroke: #1a1726;
+    stroke-width: 2;
+  }
+  .flow-node-mint .node-port {
+    fill: #70e1c8;
+  }
+  .flow-foundation rect {
+    fill: #141722;
+    stroke: #403b54;
+  }
+  .flow-foundation circle {
+    fill: #70e1c8;
+  }
+  .flow-foundation text {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    text-anchor: middle;
+    fill: #bbb6cd;
+  }
+  .architecture-principles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 3.5rem;
+  }
+  .principle {
+    padding-right: 1rem;
+  }
+  .principle-mark {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1.2rem;
+    border-radius: 12px;
+    background: #a78bfa0c;
+    border: 1px solid #a78bfa20;
+    color: #b4a0ee;
+  }
+  .principle-mark svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 1.3;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  .principle h3 {
+    margin: 0 0 0.7rem;
+    font-size: 1rem;
+    color: #e8e5f1;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+  .principle p {
+    margin: 0;
+    color: #9da2b3;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    max-width: 36ch;
+  }
+  @media (max-width: 900px) {
+    .architecture-shell {
+      width: min(1240px, calc(100% - 3rem));
+    }
+    .architecture-heading {
+      gap: 1.5rem 2rem;
+    }
+    .architecture-principles {
+      gap: 1.75rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .architecture-shell {
+      width: calc(100% - 2.5rem);
+    }
+    .architecture-heading {
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-bottom: 2rem;
+    }
+    .section-note {
+      margin-bottom: 1.2rem;
+    }
+    .architecture-intro {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .architecture-scene {
+      border-radius: 18px;
+    }
+    .architecture-topline,
+    .architecture-bottomline {
+      padding: 1.1rem;
+      font-size: 0.65rem;
+    }
+    .architecture-topline {
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .scene-status {
+      flex-basis: 100%;
+      font-size: 0.75rem;
+    }
+    .motion-control {
+      min-height: 36px;
+    }
+    .flow-diagram {
+      display: none;
+    }
+    .architecture-scene {
+      overflow: hidden;
+    }
+    .mobile-flow {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      list-style: none;
+      margin: 0;
+      padding: 1.25rem;
+    }
+    .mobile-flow li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 1rem;
+      border: 1px solid #a78bfa24;
+      border-radius: 12px;
+      background: #a78bfa05;
+      font-size: 0.95rem;
+      color: #e9e4f5;
+    }
+    .mobile-flow li + li {
+      margin-top: 0.7rem;
+    }
+    .mobile-flow li:last-child {
+      border-color: #70e1c838;
+      background: #70e1c805;
+    }
+    .mobile-flow li strong {
+      display: block;
+      margin-top: 0.2rem;
+      color: #a7a9bc;
+      font-size: 0.75rem;
+      font-weight: 400;
+    }
+    .mobile-flow-dot {
+      width: 8px;
+      height: 8px;
+      border: 1px solid #a78bfa;
+      border-radius: 3px;
+      transform: rotate(45deg);
+    }
+    .mobile-flow li:last-child .mobile-flow-dot {
+      border-color: #70e1c8;
+    }
+    .mobile-flow-arrow {
+      margin-left: auto;
+      color: #a78bfa;
+      font-size: 1.2rem;
+    }
+    .mobile-flow li:last-child .mobile-flow-arrow {
+      color: #70e1c8;
+    }
+    .architecture-principles {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      margin-top: 2rem;
+    }
+    .principle {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      column-gap: 1rem;
+    }
+    .principle-mark {
+      grid-row: 1 / 3;
+      margin-top: 0.1rem;
+    }
+    .principle p {
+      max-width: none;
+      font-size: 0.88rem;
+    }
+    .principle h3 {
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+    }
+  }
+</style>

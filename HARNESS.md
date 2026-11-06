@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-O npm ci também ativa os hooks apenas neste checkout. Não modifica configuração global. Para retomar, leia docs/ESTADO.md, depois o cartão correspondente em docs/IMPLEMENTACAO.md. O site inicial é uma base técnica, não a apresentação final.
+O npm ci também ativa os hooks apenas neste checkout. Não modifica configuração global. Para retomar, leia docs/ESTADO.md, depois o cartão correspondente em docs/IMPLEMENTACAO.md. A primeira versão da apresentação já foi implementada; a revisão está em docs/REVISAO-V1.md.
 
 ## Ciclo de trabalho
 
@@ -43,6 +43,7 @@ Não abrir PR nem criar branch de feature. Nunca usar force push ou --no-verify.
 | npm run typecheck      | Diagnósticos Astro e TypeScript estrito                                       |
 | npm test               | Comportamento real das políticas e hooks em processos/fixtures isoladas       |
 | npm run build          | Geração do site estático em dist/                                             |
+| npm run test:build     | Assets locais, destinos internos e IDs do HTML/CSS gerado                     |
 | npm run verify         | Todos os controles anteriores, sem publicar                                   |
 | npm run harness        | Scanner harness-score com gate L3, somente este repositório                   |
 | npm run harness:report | JSON e Markdown locais, sem LLM nem chamadas remotas do scanner               |

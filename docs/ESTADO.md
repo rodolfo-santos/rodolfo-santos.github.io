@@ -12,11 +12,11 @@ Pages confirmado em build_type workflow. O modo legado automático encontrado no
 
 ## Produto
 
-Planejamento visual concluído em docs/PLANO.md. A página Astro atual é apenas a base técnica, ainda sem fotografia, narrativa completa ou animações. O site final não está publicado e o README do perfil não foi alterado.
+Primeira versão implementada: hero, retrato público do GitHub, casos, arquitetura animada, trajetória, ensino e contato. Fontes locais, navegação progressiva e controle de movimento. Revisão registrada em REVISAO-V1.md. A publicação desta versão e a entrada no README do perfil serão confirmadas no encerramento da entrega.
 
 ## Próximo cartão
 
-P01 de docs/IMPLEMENTACAO.md: composição do hero e diagrama no desktop/celular. Seleção de fotos ainda privada e pendente; não publicar imagem sem confirmação da identidade. É possível construir a composição com um espaço editorial reservado à fotografia, sem fingir retrato final.
+P01–P03 implementados e integrados. P04 em conclusão: commit/push na main, CI, deploy manual e entrada no perfil. Depois: iterar a fotografia e a apresentação com feedback do titular, preservando fontes e fatos.
 
 ## Regras preservadas
 
