@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import { caseStudies, type CaseStudy } from '../../content/case-studies';
+import { projectVisuals } from '../../content/visuals';
 import '../../styles/global.css';
 import '../../styles/case-study.css';
 
@@ -19,6 +20,7 @@ interface Props {
 }
 
 const { study, nextStudy } = Astro.props;
+const visuals = projectVisuals[study.slug] ?? [];
 const canonical = new URL(`/projetos/${study.slug}/`, Astro.site);
 const pageTitle = `${study.title} | Rodolfo dos Santos`;
 const chapters = [
@@ -114,6 +116,40 @@ const chapters = [
           </p>
         </aside>
       </section>
+
+      {visuals.length > 0 && (
+        <section
+          class="study-visuals study-shell"
+          aria-labelledby="visuals-title"
+        >
+          <div class="study-visuals-heading" data-reveal>
+            <p class="study-section-label">O produto em tela</p>
+            <h2 id="visuals-title">Uma janela para o trabalho.</h2>
+          </div>
+          <div
+            class:list={[
+              'study-visuals-grid',
+              { 'study-visuals-single': visuals.length === 1 },
+            ]}
+          >
+            {visuals.map((visual) => (
+              <figure class="study-visual" data-reveal>
+                <div class="study-visual-image">
+                  <img
+                    src={visual.src}
+                    alt={visual.alt}
+                    width={visual.width}
+                    height={visual.height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <figcaption>{visual.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
 
       <div class="study-layout study-shell">
         <nav class="study-chapters" aria-label="Nesta história">

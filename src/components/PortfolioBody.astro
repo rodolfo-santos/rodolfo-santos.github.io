@@ -1,5 +1,7 @@
 ---
 import { caseStudies } from '../content/case-studies';
+import { companyLogos } from '../content/visuals';
+import ProjectShowcase from './ProjectShowcase.astro';
 import '../styles/portfolio-v2.css';
 const expertise = [
   [
@@ -96,6 +98,29 @@ const career = [
   <span>Produtos & marketplaces</span>
   <span>Pagamentos & financeiro</span>
   <span>Pessoas & IA</span>
+</div>
+<div class="v3-brands shell" aria-label="Empresas da minha trajetória">
+  <p>Experiência construída em</p>
+  <div>
+    {[
+      'Qeevo Group',
+      'Quero Educação',
+      'Melhor Escola',
+      'SoluCX',
+      'Embraer',
+    ].map((company) => (
+      <a href="#trajetoria">
+        <img
+          src={companyLogos[company]}
+          width="100"
+          height="100"
+          alt=""
+          loading="lazy"
+        />
+        <span>{company}</span>
+      </a>
+    ))}
+  </div>
 </div>
 <section
   class="v2-transform shell section-space"
@@ -209,9 +234,10 @@ const career = [
     Entenda a arquitetura e minha contribuição <span aria-hidden="true">↗</span>
   </a>
 </section>
+<ProjectShowcase />
 <section
   class="shell section-space"
-  id="trabalho"
+  id="casos"
   aria-labelledby="projects-title"
 >
   <span id="projetos" class="v2-anchor"></span>
@@ -346,6 +372,44 @@ const career = [
     </article>
   </div>
 </section>
+<section class="v3-sharing shell" aria-labelledby="sharing-title">
+  <figure>
+    <img
+      src="/images/speaking/fatec-performance-web.webp"
+      width="480"
+      height="480"
+      alt="Rodolfo na palestra de Performance Web da FATEC Jacareí, com a apresentação projetada ao fundo."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>FATEC Jacareí · Performance Web · 2024</figcaption>
+  </figure>
+  <div>
+    <h2 id="sharing-title">
+      O conhecimento
+      <br />
+      precisa circular.
+    </h2>
+    <p>
+      Cinco anos na sala de aula continuam presentes na minha forma de
+      trabalhar. Na FATEC Jacareí, compartilhei práticas de Performance Web e
+      Core Web Vitals, conectando a experiência de engenharia à formação de quem
+      está começando.
+    </p>
+    <p>
+      Ensinar, discutir decisões e trocar experiências também fazem parte de
+      construir tecnologia.
+    </p>
+    <a
+      class="text-link"
+      href="https://www.linkedin.com/feed/update/urn:li:activity:7254986455985360897/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Veja o relato da palestra <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
 <section
   class="shell section-space"
   id="trajetoria"
@@ -374,7 +438,18 @@ const career = [
           {item.date}
         </div>
         <div>
-          <h3>{item.company}</h3>
+          <div class="v3-company-heading">
+            {companyLogos[item.company] && (
+              <img
+                src={companyLogos[item.company]}
+                width="100"
+                height="100"
+                alt=""
+                loading="lazy"
+              />
+            )}
+            <h3>{item.company}</h3>
+          </div>
           {item.roles.map((role) => (
             <p class="v2-career-role">{role}</p>
           ))}

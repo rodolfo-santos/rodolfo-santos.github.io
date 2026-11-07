@@ -29,3 +29,7 @@ P01–P04 entregues para a primeira versão. A segunda versão aprofunda os caso
 ## Regras preservadas
 
 Trabalhar na main, commitar e dar push diretamente. Não abrir PR. Preservar a referência escura/violeta e a amplitude profissional. Dados de carreira privados e valores de pretensão não entram neste repositório.
+
+## Integração visual do LinkedIn, 07/11/2026
+
+Galeria real de UniAlphaville, UniASP e Melhor Escola integrada à home e aos casos; sete logos na trajetória e foto da palestra na FATEC. CTA principal direciona à galeria em #trabalho; casos preservam #projetos. Dados de mídia centralizados em src/content/visuals.ts. Origem e limites em ASSETS.md, validação em REVISAO-VISUAL-LINKEDIN.md. Originais e inventário permanecem privados. Fluxo de entrega: commit/push na main e deploy manual após validação, preservando a preferência por não abrir PR.
