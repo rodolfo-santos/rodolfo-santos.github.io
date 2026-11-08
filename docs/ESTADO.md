@@ -1,5 +1,9 @@
 # Estado de continuação
 
+## Planejamento para recrutadores, 08/11/2026
+
+Nova etapa somente de planejamento: [spec](../specs/001-portfolio-recrutadores/spec.md), [preferências](../specs/001-portfolio-recrutadores/preferencias.md), [plano técnico](../specs/001-portfolio-recrutadores/plan.md) e [tarefas](../specs/001-portfolio-recrutadores/tasks.md). Referência: avaliação RH da versão f6d620b, baseline provisória 7,43/10. A implementação desta etapa e suas medições permanecem pendentes; specs não representam nota 10 ou nova revisão no navegador. T00 concluída por revisão interna em 08/11/2026, com requisitos reconciliados e HTML de currículo curado ativado como decisão editorial revisável. Próximo passo: T01, iniciar conteúdo RH com donos de arquivos definidos. Orquestrador concentra commit/push na main, sem PR/branches, e deploy separado. Delegação local nesta sessão, sem canvas Maestri conectado. As entregas históricas abaixo permanecem como registro.
+
 Atualizado em 06/11/2026.
 
 ## Entrega atual

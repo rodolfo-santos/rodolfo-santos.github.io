@@ -1,5 +1,9 @@
 # Cartões de implementação
 
+## Etapa de recrutadores, planejamento em 08/11/2026
+
+Os cartões P01–P04 abaixo são históricos. A próxima etapa usa a [spec](../specs/001-portfolio-recrutadores/spec.md), as [preferências](../specs/001-portfolio-recrutadores/preferencias.md), o [plano](../specs/001-portfolio-recrutadores/plan.md) e as [tarefas T00–T19](../specs/001-portfolio-recrutadores/tasks.md). Status: planejamento somente, execução e validação pendentes. T00 concluída por revisão interna em 08/11/2026; próximo passo T01, com posse de arquivos definida antes da delegação. Implementação das propostas permanece pendente e revisável. A baseline provisória é 7,43/10; o harness 103/105 não mede a apresentação para RH. Fluxo direto na main com Git centralizado no orquestrador, sem PR/branches; publicação é ação separada.
+
 Usar junto com o plano visual, sem redefinir o escopo a cada sessão. Atualizar o estado do cartão com evidência verificável.
 
 Estado em 06/11/2026: P01–P04 entregues para a primeira versão pública. Implementação 4943568, com CI e deploy aprovados. Evidências e limites da revisão em REVISAO-V1.md; publicação e continuação em ESTADO.md.
