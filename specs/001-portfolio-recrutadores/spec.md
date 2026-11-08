@@ -1,12 +1,18 @@
 # Portfólio para recrutadores e RH
 
-Status: especificação proposta, 08/11/2026. Não implementada nem validada com recrutadores por este documento. Público principal confirmado: recrutadores e profissionais de RH. Preferências, propostas e decisões técnicas estão separadas em [preferencias.md](preferencias.md).
+Status: contrato de produto atualizado em 08/11/2026. Este documento não atesta implementação, revisão visual ou validação com recrutadores. Público principal confirmado: recrutadores e profissionais de RH. Preferências, propostas e decisões técnicas estão separadas em [preferencias.md](preferencias.md).
 
 ## Problema e resultado esperado
 
 A apresentação atual mostra trabalho real, mas exige exploração para entender nível profissional, contribuição própria e valor para o negócio. A próxima versão deve ajudar o visitante a identificar quem é Rodolfo, a que oportunidades seu perfil pode se adequar, o que construiu e como iniciar uma conversa.
 
 A avaliação editorial de 07/11/2026 atribuiu 7,4/10 ao conjunto para esse público, com limitações registradas. A meta de excelência orienta a revisão; não existe nota 10 adquirida por aprovar esta especificação, executar o harness ou concluir o build.
+
+## Direcionamento visual confirmado em 08/11/2026
+
+O titular reforçou como muito importante que o portfólio seja visual, animado e dinâmico: ícones e logos das tecnologias usadas, imagens e snapshots das entregas e links para sites em produção. Essa preferência complementa o público de recrutadores e RH. Clareza para esse público não significa tornar o site estático, apagar sua identidade ou eliminar a exploração visual.
+
+Representações de stack, imagens reais, acesso a produtos e movimento devem ajudar a reconhecer capacidades e entregas. A escolha dos ativos, agrupamentos, efeitos e composição continua sendo decisão de implementação a revisar no resultado, sem autorizar decoração sem relação com o trabalho ou alegações adicionais de proficiência e autoria. Os contratos correspondentes estão em RH-006, RH-007 e RH-014 a RH-016.
 
 ## Escopo e percurso propostos
 
@@ -88,7 +94,7 @@ Aceite:
 
 ### RH-006: identidade visual e imagens reais
 
-Prioridade: essencial. Manter grafite, violeta vivo confortável, profundidade e fotografia real, com brilho concentrado nos pontos que orientam a atenção. Não substituir o estilo por uma preferência presumida de RH.
+Prioridade: essencial. Manter grafite, violeta vivo confortável, profundidade e fotografia real, com brilho concentrado nos pontos que orientam a atenção. O reforço do titular de 08/11/2026 exige uma apresentação visual de tecnologias e entregas reais, vinculada a RH-014 e RH-015. Não substituir o estilo por uma preferência presumida de RH.
 
 Aceite:
 
@@ -101,7 +107,7 @@ Aceite:
 
 ### RH-007: movimento progressivo a serviço da leitura
 
-Prioridade: essencial. Manter movimento ligado à rolagem como melhoria progressiva. A narrativa e os efeitos devem orientar o visitante, respeitando controle e conforto.
+Prioridade: essencial. Manter movimento ligado à rolagem como melhoria progressiva, perceptível na experiência padrão. A narrativa e os efeitos devem orientar o visitante, respeitando controle e conforto. Não substituir a preferência visual confirmada por uma interpretação de que recrutadores e RH exigem uma página quieta ou exclusivamente textual.
 
 Aceite:
 
@@ -110,6 +116,8 @@ Aceite:
 - Com `prefers-reduced-motion: reduce`, não há parallax, órbitas contínuas ou fixação que dependa de movimento; texto e navegação continuam completos.
 - Transições não atrasam o acesso a um bloco alcançado por âncora ou teclado. Cada efeito remanescente tem finalidade registrada na revisão: entrada, orientação, progresso ou resposta a uma ação.
 - Elementos decorativos ficam fora da árvore de acessibilidade; informação significativa não depende apenas da animação.
+- A revisão em navegador registra o comportamento com movimento completo ao avançar a rolagem e ao interagir, demonstrando que a apresentação dinâmica permanece perceptível e ligada a conteúdo ou orientação. Um efeito descrito no código ou uma captura estática isolada não comprovam esse aceite.
+- Tipo, quantidade, duração e distribuição dos efeitos são escolhas de implementação propostas, não preferências já confirmadas. A leitura rápida, o contato e o acesso aos casos continuam prioritários; animação não é substituída por repetição de etiquetas ou cartões sem função.
 
 ### RH-008: leitura, responsividade e ritmo
 
@@ -182,12 +190,56 @@ Aceite:
 - Sitemap contém as rotas públicas canônicas. Prévia de compartilhamento usa imagem publicável e descrição coerente com a proposta profissional.
 - Deploy, quando autorizado como etapa de execução, segue o fluxo existente direto na main e publicação manual após checks. Não criar PR como exigência habitual nem declarar publicação a partir do push.
 
+### RH-014: ícones e logos das tecnologias usadas
+
+Prioridade: essencial pelo reforço confirmado de 08/11/2026. Tornar a stack visual e reconhecível, vinculada aos trabalhos reais.
+
+Aceite:
+
+- Ícones/logos reais agrupados por caso ou uso sustentado, com nomes legíveis e acessíveis; uma marca não representa certificação, domínio absoluto, tempo de experiência ou autoria integral. Não repetir imagens com alt redundante ao nome adjacente.
+- Inventário registra origem pública, licença/termos aplicáveis, atribuição e alterações. A coleção e a composição são escolhas de implementação, sem permissão presumida por disponibilidade em busca.
+- Ativos locais, otimizados e dimensionados, sem biblioteca inteira ou script remoto somente para exibir marcas; registrar formatos e bytes. Conferir legibilidade/contraste no tema escuro e celular; nomes e imagens permanecem sem JavaScript.
+
+### RH-015: snapshots reais das entregas
+
+Prioridade: essencial pelo reforço confirmado de 08/11/2026. Apresentar entregas reais, com curadoria e contexto profissional.
+
+Aceite:
+
+- Snapshots pertinentes ao caso, de origem publicável registrada; legenda separa a versão mostrada, a contribuição pessoal e a etapa de construção quando necessário. Registrar data de captura/publicação conhecida ou a limitação, sem inventá-la. Uma tela de entrada não comprova operações que não mostra.
+- Revisão humana dos pixels e metadados exclui dados pessoais, contas, valores transacionais, identificadores operacionais, URLs autenticadas e segredos; não autoriza nova coleta privada. Imagens anteriores também passam pela curadoria.
+- Derivados otimizados, dimensionados e sem metadados pessoais, com alt contextual e interface reconhecível. Não gerar telas para simular prova; diagramas conceituais são identificados separadamente.
+- Galerias/ampliações propostas preservam teclado, foco e toque. Compreensão do caso independe de textos minúsculos na captura; conteúdo essencial permanece sem JavaScript.
+
+### RH-016: acesso aos produtos públicos em produção
+
+Prioridade: essencial pelo reforço confirmado de 08/11/2026. Oferecer links de produção, distintos dos links para aprofundar o caso.
+
+Aceite:
+
+- Ação descritiva identifica produto/destino; nova aba, quando usada, é perceptível e usa proteção apropriada. Casos sem produto público não recebem botão fictício nem expõem sistemas internos.
+- Verificar externamente URL final, redirecionamentos, conteúdo do produto e disponibilidade pública, registrando data e resultado. HTTP bem-sucedido isolado não comprova o destino; falha de acesso/ferramenta mantém verificação pendente, sem alegação de validação.
+- Verificação pública somente de leitura, sem áreas administrativas, contas, transações ou formulários de compra; excluir URLs de sessão, parâmetros pessoais e links temporários.
+- Contexto preserva papel e período de construção. Site acessível hoje não comprova adoção no lançamento, resultado de negócio ou autoria de toda a evolução atual.
+
+### RH-017: palestras e participação em eventos
+
+Prioridade: essencial pelo pedido confirmado de 08/11/2026. Mostrar palestras realizadas e eventos frequentados, com representação visual e papel profissional explícito.
+
+Aceite:
+
+- A seção distingue palestrante de participante. Nome, tema e data usam somente o nível de detalhe confirmado; participar não implica ter palestrado, recebido prêmio ou organizado o evento.
+- Incluir material pertinente e publicável: foto, snapshot de apresentação ou programação e link público quando disponíveis, com alt e legenda contextual. Não inventar imagem, tema, data, público ou resultado para completar um cartão.
+- Conteúdo já confirmado entra sem depender de preencher todos os demais eventos. Lacunas são levantadas no acompanhamento privado; não publicar placeholders, links fictícios ou rótulos de evento sem evidência.
+- Recuperar o acervo antes de solicitar material ao titular; quando necessário, pedir um link ou material por vez, aguardando a resposta. Um link recebido é fonte para revisão, sem autorizar automaticamente republicação de seu conteúdo ou contato com organizadores.
+- Seção e links continuam acessíveis por teclado, celular, movimento reduzido e sem JavaScript; a revisão da mídia segue RH-011 e RH-015.
+
 ## Fora do escopo
 
 Não inclui candidatura, envio de mensagens, campanha social, exposição de novos contatos pessoais, pesquisa em contas privadas, coleta de produção ou infraestrutura nova. A criação de specs não autoriza esses trabalhos. Nenhuma nova instalação, alteração de código ou publicação é parte desta entrega documental.
 
 ## Dependências e encerramento
 
-Pendências de produto: confirmar a redação de encaixe profissional, revisar a seleção/ordem dos três destaques como proposta, curar o artefato público de currículo e organizar uma eventual rodada com RH. Nenhuma pendência autoriza inventar dados ou apagar realizações sustentadas.
+Pendências de produto: recuperar e curar palestras/eventos, curar ativos de tecnologias e snapshots, verificar destinos públicos de produção e a experiência dinâmica em navegador, confirmar a redação de encaixe profissional, revisar a seleção/ordem dos três destaques como proposta, curar o artefato público de currículo e organizar uma eventual rodada com RH. Nenhuma pendência autoriza inventar dados ou apagar realizações sustentadas.
 
 Na implementação, cada requisito deverá receber estado `pendente`, `implementado`, `validado` ou `não aplicável`, acompanhado de evidência pertinente. Um requisito documentalmente descrito continua pendente de execução. Achado material aberto deve aparecer na entrega final com seu efeito e próximo passo.

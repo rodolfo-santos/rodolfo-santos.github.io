@@ -91,3 +91,14 @@ Ativado em T00 como decisão editorial revisável: produzir HTML curado. Se a cu
 ## Registro de conclusão
 
 Cada tarefa concluída deve receber data, SHA/artefato, responsável, verificação realizada e limitações. Não marcar como concluída por ter sido delegada ou por existir documento de intenção. Baseline congelada: clareza20%7,0; leitura rápida20%7,0; casos20%7,5; visual15%7,8; mobile5%7,7; contato10%7,5; SEO5%8,5; confiabilidade5%8,0, total **7,43/10 provisório**. Novas notas permanecem pendentes até avaliação da implementação.
+
+## Adendo: tecnologias, entregas, produção e eventos
+
+Direção confirmada em 08/11/2026, PC-10/PC-11. Novos contratos: RH-014 → T20, RH-015 → T21, RH-016 → T22, RH-017 → T23. Todas as tarefas novas estão pendentes; mantêm os gates e responsabilidades anteriores.
+
+- [ ] **T20, pendente.** Donos: curadoria de ativos e frontend, com posse combinada de `src/content/`, `public/images/` e componentes pertinentes. Dependências: conteúdo de T02/T05 e curadoria de marca. Aceite RH-014: logos reais agrupadas por uso confirmado, nomes acessíveis, origem/licença/atribuição registradas, ativos locais otimizados com formatos/bytes; revisar tema escuro, celular e noJS. Não inferir proficiência ou certificação da marca.
+- [ ] **T21, pendente.** Donos: editorial/visual e frontend de galeria, sob contrato de posse. Dependências: seleção de entregas e revisão de publicabilidade. Aceite RH-015: snapshots reais pertinentes, origem/data conhecida e contexto de papel/versão, derivados revisados quanto a pixels/metadados e dimensões. Galeria funciona por teclado/toque/noJS; sem operação privada, telas geradas como prova ou placeholders.
+- [ ] **T22, pendente.** Donos: pesquisador público e frontend de produtos. Dependências: produtos e destinos candidatos confirmados. Aceite RH-016: verificação externa de URL final, conteúdo, disponibilidade e data registrada; ação de produção distinta do caso, sem URLs privadas/de sessão. Preservar papel e período; verificação indisponível fica pendente. Não executar compras, formulários ou login para validar.
+- [ ] **T23, pendente.** Donos: editorial de carreira e frontend. Dependências: recuperação do acervo de palestras/eventos e curadoria da mídia. Aceite RH-017: seção visual com conteúdos confirmados, papel palestrante/participante explícito, tema/data sem inferências, fotos e links publicáveis quando disponíveis; pedir complemento ao titular um item por vez e não publicar placeholders. Validar celular, teclado, movimento reduzido e noJS.
+
+T04/RH-007 preserva dinamismo perceptível no percurso padrão e resposta à interação, com revisão real em navegador. T20–T23 não significam preenchimento decorativo; informação de contratação e leitura por RH continuam prioritárias. Integrar esses lotes à revisão T13–T17 e registrar limitações antes dos gates de publicação existentes.
