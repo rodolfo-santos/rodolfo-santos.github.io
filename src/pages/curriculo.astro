@@ -391,7 +391,7 @@ const title = `${resume.name} | Currículo público`;
     min-height: 44px;
     margin-top: 8px;
   }
-  @media (max-width: 650px) {
+  @media screen and (max-width: 650px) {
     .resume-toolbar {
       padding: 16px 20px;
       align-items: flex-start;
@@ -447,7 +447,7 @@ const title = `${resume.name} | Currículo público`;
       border-radius: 0;
       box-shadow: none;
       font-size: 10pt;
-      line-height: 1.5;
+      line-height: 1.45;
     }
     h1 {
       font-size: 25pt;
@@ -456,7 +456,7 @@ const title = `${resume.name} | Currículo público`;
       font-size: 12pt;
     }
     .resume-heading {
-      padding-bottom: 15pt;
+      padding-bottom: 10pt;
     }
     .resume-current,
     .resume-objective {
@@ -469,7 +469,7 @@ const title = `${resume.name} | Currículo público`;
       font-size: 8.5pt;
     }
     section {
-      margin-top: 20pt;
+      margin-top: 15pt;
     }
     h2 {
       font-size: 11pt;
@@ -486,13 +486,20 @@ const title = `${resume.name} | Currículo público`;
       margin-top: 7pt !important;
     }
     .resume-experience {
-      padding-bottom: 16pt;
+      padding-bottom: 10pt;
     }
     .resume-achievements article + article {
       margin-top: 11pt;
     }
     .resume-education {
-      margin-top: 12pt;
+      margin-top: 8pt;
+    }
+    ul {
+      margin-top: 7pt;
+    }
+    .resume-footer {
+      margin-top: 14pt;
+      padding-top: 10pt;
     }
     a {
       text-decoration: none;

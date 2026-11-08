@@ -1,5 +1,13 @@
 # Estado de continuação
 
+## Revisão nativa parcial, 08/11/2026
+
+Chrome nativo voltou a responder durante esta sessão. Foram observadas abertura desktop, primeira tela em 390×844 e 360×800, menu móvel (abrir, Escape, foco devolvido), galeria e palestra em 360 px, abertura do caso de publicação e currículo móvel. Capturas atuais em `evidence/rh-mobile-360.png` e `evidence/rh-speaking-mobile.png`. Não representam a matriz completa de rotas/viewports.
+
+A impressão do currículo abriu com quatro páginas e última quase vazia. Corrigidos espaçamentos de impressão e escopo dos estilos móveis (`screen`) para evitar sua aplicação ao papel. Nova prévia confirmou três páginas; páginas 1 e 2 inspecionadas visualmente. A janela deixou de estar disponível antes da inspeção visual da página 3 (erro `noWindowsAvailable`). Nenhum PDF final foi publicado.
+
+Permanecem pendentes a matriz completa de interface, estados sem JavaScript/movimento reduzido, leitor de tela, desempenho e revisão da última página impressa. Deploy não executado e nota não recalculada. Abaixo ficam os registros históricos anteriores.
+
 ## Continuação visual, 08/11/2026
 
 Adicionados seis logos de tecnologias com nomes e contexto de uso, seção de palestras com registro confirmado na FATEC Jacareí em 2024 e três links públicos de produção distintos dos estudos de caso. Movimento ampliado para marcas e imagens, preservando conteúdo sem JavaScript e redução de movimento. Sem novas fotografias ou snapshots nesta etapa: os registros existentes foram reaproveitados. T20/T22/T23 implementadas parcialmente; T21 continua aguardando material adicional.
