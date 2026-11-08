@@ -1,0 +1,83 @@
+---
+const stacks = [
+  ['Vue', 'vuedotjs', 'Produtos web', '#42b883'],
+  ['TypeScript', 'typescript', 'Frontend', '#7bb8f3'],
+  ['Go', 'go', 'Serviço fiscal', '#74d6e8'],
+  ['Laravel', 'laravel', 'Backend e pagamentos', '#ff817c'],
+  ['PostgreSQL', 'postgresql', 'Dados e processamento', '#9bbfe8'],
+  ['Redis', 'redis', 'Cache e serviços', '#ff9999'],
+];
+---
+
+<ul class="stack-logos" aria-label="Tecnologias usadas nos projetos">
+  {stacks.map(([name, icon, context, color]) => (
+    <li style={`--stack-color: ${color}`} data-stack-mark>
+      <img
+        src={`/images/stack/${icon}.svg`}
+        width="36"
+        height="36"
+        alt=""
+        loading="lazy"
+      />
+      <span>
+        <strong>{name}</strong>
+        <small>{context}</small>
+      </span>
+    </li>
+  ))}
+</ul>
+<style>
+  .stack-logos {
+    list-style: none;
+    padding: 0;
+    margin: 32px 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .stack-logos li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: linear-gradient(125deg, #1b1c2b, #11141c);
+    box-shadow: inset 3px 0 var(--stack-color);
+  }
+  .stack-logos img {
+    filter: invert(1);
+    flex: none;
+  }
+  .stack-logos strong {
+    display: block;
+    color: var(--stack-color);
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .stack-logos small {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+  }
+  @media (max-width: 767px) {
+    .stack-logos {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .stack-logos li {
+      padding: 16px 12px;
+      gap: 10px;
+    }
+    .stack-logos img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  @media (max-width: 380px) {
+    .stack-logos {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

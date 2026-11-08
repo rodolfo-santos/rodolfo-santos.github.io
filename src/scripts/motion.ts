@@ -124,6 +124,44 @@ function setupMotion(forceReduced = false): () => void {
 
       // Reading content stays still and visible. Scroll motion explains the
       // financial flow below, rather than delaying each paragraph's arrival.
+      const stackMarks =
+        document.querySelectorAll<HTMLElement>('[data-stack-mark]');
+      const stackContainer = stackMarks.item(0)?.parentElement;
+      if (stackContainer) {
+        gsap.from(stackMarks, {
+          y: 20,
+          rotation: -2,
+          duration: 0.65,
+          stagger: 0.06,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: stackContainer,
+            start: 'top 88%',
+            once: true,
+          },
+        });
+      }
+      for (const figure of document.querySelectorAll<HTMLElement>(
+        '.project-showcase__image-frame, .speaking-event__photo-frame',
+      )) {
+        const image = figure.querySelector('img');
+        if (image)
+          gsap.fromTo(
+            image,
+            { scale: 1.04 },
+            {
+              scale: 1,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: figure,
+                start: 'top bottom',
+                end: 'bottom center',
+                scrub: 0.5,
+              },
+            },
+          );
+      }
+
       const architecture = document.querySelector<HTMLElement>(
         '[data-architecture]',
       );

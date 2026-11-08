@@ -16,6 +16,12 @@ import '../styles/project-showcase.css';
     </p>
   </header>
 
+  <p class="project-showcase__verification">
+    Sites em produção verificados em{' '}
+    <time datetime="2026-11-08">08/11/2026</time>. As imagens são registros
+    publicados no LinkedIn; os links externos levam aos sites atuais.
+  </p>
+
   <div class="project-showcase__grid">
     {showcaseProducts.map((product, index) => (
       <article
@@ -52,6 +58,18 @@ import '../styles/project-showcase.css';
               </svg>
             </span>
           </div>
+        </a>
+        <a
+          class="project-showcase__production"
+          href={product.productionHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visitar ${product.title} em produção (abre em outra aba)`}
+        >
+          <span>
+            Visitar site em produção <span aria-hidden="true">↗</span>
+          </span>
+          <small>Abre em outra aba</small>
         </a>
       </article>
     ))}

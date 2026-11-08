@@ -1,0 +1,68 @@
+---
+import { speakingEvents } from '../content/events';
+import '../styles/speaking-events.css';
+---
+
+<section
+  class="speaking-events shell section-space"
+  id="palestras-eventos"
+  aria-labelledby="speaking-events-title"
+>
+  <header class="speaking-events__heading">
+    <h2 id="speaking-events-title">Palestras e eventos</h2>
+    <p>
+      Cinco anos como professor de tecnologia fazem parte da minha forma de
+      trabalhar: ensinar, discutir decisões e compartilhar o que aprendo
+      construindo software.
+    </p>
+  </header>
+  <div class="speaking-events__list">
+    {speakingEvents.map((event) => (
+      <article
+        class="speaking-event"
+        aria-labelledby={`event-${event.id}`}
+        data-speaking-event
+      >
+        <figure class="speaking-event__photo">
+          <div class="speaking-event__photo-frame">
+            <img
+              src={event.image.src}
+              alt={event.image.alt}
+              width={event.image.width}
+              height={event.image.height}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption>{event.image.caption}</figcaption>
+        </figure>
+        <div class="speaking-event__story">
+          <div class="speaking-event__context">
+            <span class="speaking-event__role">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="9" y="3" width="6" height="11" rx="3" />
+                <path d="M6 10v1a6 6 0 0 0 12 0v-1M12 17v4m-4 0h8" />
+              </svg>
+              {event.role}
+            </span>
+            <time datetime={event.year}>{event.year}</time>
+          </div>
+          <p class="speaking-event__institution">{event.institution}</p>
+          <h3 id={`event-${event.id}`}>{event.title}</h3>
+          <p class="speaking-event__description">{event.description}</p>
+          <a
+            class="speaking-event__link"
+            href={event.link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {event.link.label}
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 15 15 5M5 5h10v10" />
+            </svg>
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

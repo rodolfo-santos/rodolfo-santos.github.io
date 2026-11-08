@@ -29,3 +29,9 @@ Mídias consultadas na [seção de projetos de Rodolfo](https://www.linkedin.com
 As capturas foram obtidas nas resoluções entregues pelo LinkedIn, até 480 pixels de largura. Foram convertidas para WebP sem redesenhar a interface, alterar valores, gerar conteúdo ou ampliar a resolução de origem; os componentes limitam sua exibição. Os derivados não mantêm EXIF. Arquivos originais, inventário e URLs temporárias da plataforma ficam fora do repositório público. O site serve os arquivos localmente, sem depender da sessão ou de URLs temporárias do LinkedIn.
 
 Capturas de dashboards com valores financeiros e números operacionais não foram selecionadas para esta publicação. Nenhuma métrica de tela foi convertida em resultado profissional. A adição das imagens não altera as datas e os graus de contribuição já revisados.
+
+## Tecnologias e destinos públicos, 08/11/2026
+
+Seis SVGs locais em `images/stack/` vêm de [Simple Icons 13.0.0](https://github.com/simple-icons/simple-icons/tree/13.0.0/icons): Vue, TypeScript, Go, Laravel, PostgreSQL e Redis. Geometria original preservada; apresentação monocromática por CSS. A licença CC0 da coleção acompanha os arquivos em `images/stack/LICENSE.md`; marcas pertencem aos seus titulares. Representam uso nos projetos, sem sugerir certificação ou endosso.
+
+Destinos públicos consultados em 08/11/2026: [UniAlphaville](https://unialphaville.com.br/), [UniASP](https://uniasp.com.br/) e [Melhor Escola](https://www.melhorescola.com.br/). As páginas públicas identificam os produtos correspondentes; capturas históricas do LinkedIn não representam necessariamente a versão atual. A contribuição e o período descritos nos casos não abrangem automaticamente todas as evoluções atuais. Não foram feitas compras, login ou submissão de formulários.

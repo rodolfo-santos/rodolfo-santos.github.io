@@ -1,5 +1,13 @@
 # Estado de continuação
 
+## Continuação visual, 08/11/2026
+
+Adicionados seis logos de tecnologias com nomes e contexto de uso, seção de palestras com registro confirmado na FATEC Jacareí em 2024 e três links públicos de produção distintos dos estudos de caso. Movimento ampliado para marcas e imagens, preservando conteúdo sem JavaScript e redução de movimento. Sem novas fotografias ou snapshots nesta etapa: os registros existentes foram reaproveitados. T20/T22/T23 implementadas parcialmente; T21 continua aguardando material adicional.
+
+Validação integrada aprovada: 15 testes, 30 arquivos sem diagnósticos de tipos, oito páginas, links locais válidos e harness L4 103/105. A validação confirma fonte e build; comportamento visual segue pendente.
+
+Dois agentes falharam por falta de créditos do workspace; integração concluída pelo orquestrador. CUA continua indisponível (pipe nativo e host de navegador), portanto inspeção visual, execução de animações e deploy permanecem pendentes. Não há nova nota. Próximo passo: revisão visual e correções antes da publicação.
+
 Atualizado em 08/11/2026.
 
 ## Estado atual: implementação RH

@@ -2,6 +2,8 @@
 import { caseStudies } from '../content/case-studies';
 import { companyLogos } from '../content/visuals';
 import ProjectShowcase from './ProjectShowcase.astro';
+import SpeakingEvents from './SpeakingEvents.astro';
+import StackLogos from './StackLogos.astro';
 import '../styles/portfolio-v2.css';
 const expertise = [
   [
@@ -321,6 +323,7 @@ const career = [
     <br />
     <span>Visão do todo.</span>
   </h2>
+  <StackLogos />
   <div class="v2-expertise-grid">
     {expertise.map(([title, body, stack]) => (
       <article class="v2-expertise-card" data-reveal>
@@ -391,44 +394,7 @@ const career = [
     </article>
   </div>
 </section>
-<section class="v3-sharing shell" aria-labelledby="sharing-title">
-  <figure>
-    <img
-      src="/images/speaking/fatec-performance-web.webp"
-      width="480"
-      height="480"
-      alt="Rodolfo na palestra de Performance Web da FATEC Jacareí, com a apresentação projetada ao fundo."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>FATEC Jacareí · Performance Web · 2024</figcaption>
-  </figure>
-  <div>
-    <h2 id="sharing-title">
-      O conhecimento
-      <br />
-      precisa circular.
-    </h2>
-    <p>
-      Cinco anos na sala de aula continuam presentes na minha forma de
-      trabalhar. Na FATEC Jacareí, compartilhei práticas de Performance Web e
-      Core Web Vitals, conectando a experiência de engenharia à formação de quem
-      está começando.
-    </p>
-    <p>
-      Ensinar, discutir decisões e trocar experiências também fazem parte de
-      construir tecnologia.
-    </p>
-    <a
-      class="text-link"
-      href="https://www.linkedin.com/feed/update/urn:li:activity:7254986455985360897/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Veja o relato da palestra <span aria-hidden="true">↗</span>
-    </a>
-  </div>
-</section>
+<SpeakingEvents />
 <section
   class="shell section-space"
   id="trajetoria"

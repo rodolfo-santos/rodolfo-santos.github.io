@@ -47,6 +47,7 @@ export const showcaseProducts: Array<{
   description: string;
   role: string;
   href: string;
+  productionHref: string;
   image: ProjectVisual;
   color: string;
 }> = [
@@ -56,6 +57,7 @@ export const showcaseProducts: Array<{
       'Uma das experiências institucionais que exemplificam a plataforma de sites e o CMS headless que construí.',
     role: 'Construção da plataforma · Engineering Manager',
     href: '/projetos/plataforma-de-publicacao/',
+    productionHref: 'https://unialphaville.com.br/',
     image: alpha,
     color: '#eac962',
   },
@@ -65,6 +67,7 @@ export const showcaseProducts: Array<{
       'Outra identidade, a mesma base de publicação: conteúdo, tema e jornada adaptados à instituição.',
     role: 'Plataforma de publicação · Frontend e CMS',
     href: '/projetos/plataforma-de-publicacao/',
+    productionHref: 'https://uniasp.com.br/',
     image: asp,
     color: '#83e7cd',
   },
@@ -74,6 +77,7 @@ export const showcaseProducts: Array<{
       'Marketplace em que atuei no frontend, backend, checkout, pagamentos e evolução da arquitetura web.',
     role: 'Desenvolvimento full stack · Marketplaces',
     href: '/projetos/marketplaces-e-busca/',
+    productionHref: 'https://www.melhorescola.com.br/',
     image: school,
     color: '#ff9b64',
   },
