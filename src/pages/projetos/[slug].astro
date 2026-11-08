@@ -26,8 +26,8 @@ const pageTitle = `${study.title} | Rodolfo dos Santos`;
 const chapters = [
   { href: '#contexto', label: 'O desafio' },
   { href: '#construcao', label: 'Minha contribuição' },
-  { href: '#decisoes', label: 'Decisões de engenharia' },
   { href: '#resultado', label: 'O que mudou' },
+  { href: '#decisoes', label: 'Como foi construído' },
 ];
 ---
 
@@ -62,7 +62,7 @@ const chapters = [
     <meta property="og:url" content={canonical} />
     <meta
       property="og:image"
-      content="https://rodolfo-santos.github.io/images/portrait.webp"
+      content={new URL('/images/portrait.webp', Astro.site).href}
     />
     <meta property="og:image:alt" content="Rodolfo dos Santos" />
     <meta name="twitter:card" content="summary" />
@@ -112,9 +112,33 @@ const chapters = [
           <p class="study-period">{study.period}</p>
           <div class="study-role-rule" aria-hidden="true"></div>
           <p class="study-reading-note">
-            Um olhar sobre o problema, as decisões e a construção.
+            Contexto, responsabilidade e efeitos para o negócio.
           </p>
         </aside>
+      </section>
+
+      <section
+        class="study-summary study-shell"
+        aria-labelledby="summary-title"
+        data-reveal
+      >
+        <h2 class="study-section-label" id="summary-title">
+          O caso em resumo
+        </h2>
+        <dl class="study-summary-grid">
+          <div>
+            <dt>O problema</dt>
+            <dd>{study.before}</dd>
+          </div>
+          <div>
+            <dt>Minha contribuição</dt>
+            <dd>{study.contribution[0] ?? study.role}</dd>
+          </div>
+          <div>
+            <dt>O que mudou</dt>
+            <dd>{study.after}</dd>
+          </div>
+        </dl>
       </section>
 
       {visuals.length > 0 && (
@@ -172,6 +196,59 @@ const chapters = [
             <p class="study-section-label">O ponto de partida</p>
             <h2 id="context-title">O desafio por trás da construção.</h2>
             <p class="study-context">{study.context}</p>
+          </section>
+
+          <section
+            class="study-section"
+            id="construcao"
+            aria-labelledby="contribution-title"
+            data-reveal
+          >
+            <p class="study-section-label">Responsabilidade e execução</p>
+            <h2 id="contribution-title">Minha contribuição neste trabalho.</h2>
+            <ul class="study-contributions">
+              {study.contribution.map((contribution) => (
+                <li>
+                  <p>{contribution}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section
+            class="study-section study-result"
+            id="resultado"
+            aria-labelledby="outcomes-title"
+            data-reveal
+          >
+            <p class="study-section-label">Efeito para produto e operação</p>
+            <h2 id="outcomes-title">O que mudou na prática.</h2>
+            <ul class="study-outcomes">
+              {study.outcomes.map((outcome) => (
+                <li>
+                  <span aria-hidden="true"></span>
+                  <p>{outcome}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section
+            class="study-section"
+            id="decisoes"
+            aria-labelledby="decisions-title"
+            data-reveal
+          >
+            <p class="study-section-label">Profundidade técnica</p>
+            <h2 id="decisions-title">Como a solução foi construída.</h2>
+            <div class="study-decisions">
+              {study.decisions.map((decision) => (
+                <article class="study-decision">
+                  <h3>{decision.title}</h3>
+                  <p>{decision.body}</p>
+                </article>
+              ))}
+            </div>
             {study.slug === 'servico-fiscal-go' && (
               <figure
                 class="study-architecture"
@@ -267,51 +344,6 @@ const chapters = [
                 </p>
               </figure>
             )}
-            <div class="study-change">
-              <div class="study-before">
-                <h3>Cenário anterior</h3>
-                <p>{study.before}</p>
-              </div>
-              <div class="study-after">
-                <h3>O que passou a ser possível</h3>
-                <p>{study.after}</p>
-              </div>
-            </div>
-          </section>
-
-          <section
-            class="study-section"
-            id="construcao"
-            aria-labelledby="contribution-title"
-            data-reveal
-          >
-            <p class="study-section-label">Responsabilidade e execução</p>
-            <h2 id="contribution-title">Onde entrei. O que construí.</h2>
-            <ol class="study-contributions">
-              {study.contribution.map((contribution) => (
-                <li>
-                  <p>{contribution}</p>
-                </li>
-              ))}
-            </ol>
-          </section>
-
-          <section
-            class="study-section"
-            id="decisoes"
-            aria-labelledby="decisions-title"
-            data-reveal
-          >
-            <p class="study-section-label">Profundidade técnica</p>
-            <h2 id="decisions-title">As decisões que sustentam a solução.</h2>
-            <div class="study-decisions">
-              {study.decisions.map((decision) => (
-                <article class="study-decision">
-                  <h3>{decision.title}</h3>
-                  <p>{decision.body}</p>
-                </article>
-              ))}
-            </div>
             <div class="study-stack">
               <h3>Tecnologias e práticas neste trabalho</h3>
               <ul aria-label="Tecnologias e práticas">
@@ -320,24 +352,6 @@ const chapters = [
                 ))}
               </ul>
             </div>
-          </section>
-
-          <section
-            class="study-section study-result"
-            id="resultado"
-            aria-labelledby="outcomes-title"
-            data-reveal
-          >
-            <p class="study-section-label">Efeito para produto e operação</p>
-            <h2 id="outcomes-title">O que mudou na prática.</h2>
-            <ul class="study-outcomes">
-              {study.outcomes.map((outcome) => (
-                <li>
-                  <span aria-hidden="true"></span>
-                  <p>{outcome}</p>
-                </li>
-              ))}
-            </ul>
           </section>
         </div>
       </div>
@@ -370,13 +384,12 @@ const chapters = [
       >
         <p class="study-section-label">Software com contexto</p>
         <h2 id="contact-title">
-          Que desafio podemos
-          <br />
-          resolver juntos?
+          Vamos conversar sobre
+          <br />a próxima oportunidade?
         </h2>
         <p>
-          Vamos conversar sobre engenharia, arquitetura e o próximo desafio do
-          seu produto.
+          Se o seu time procura experiência em engenharia, arquitetura ou
+          liderança, podemos conversar no LinkedIn.
         </p>
         <a
           class="study-contact-link"

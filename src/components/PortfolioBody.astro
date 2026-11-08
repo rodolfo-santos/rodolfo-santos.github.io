@@ -5,25 +5,21 @@ import ProjectShowcase from './ProjectShowcase.astro';
 import '../styles/portfolio-v2.css';
 const expertise = [
   [
-    '01',
     'Backend e arquitetura',
     'Serviços, eventos e integrações que acompanham o ciclo de vida da receita.',
     'Ruby on Rails · Go · PHP/Laravel · PostgreSQL · Redis · Kafka',
   ],
   [
-    '02',
     'Produto e experiência web',
     'Da descoberta de uma oferta ao checkout, incluindo publicação e operação.',
     'Vue · Nuxt · TypeScript · SSR · OpenSearch · SEO · Core Web Vitals',
   ],
   [
-    '03',
     'Operação e qualidade',
     'Testes, rastreabilidade e infraestrutura construídos junto de quem opera.',
     'Testes unitários e E2E · GitHub Actions · AWS · Terraform com SRE · Grafana',
   ],
   [
-    '04',
     'Engenharia com IA',
     'Especificações, contexto recuperável e verificações para orientar a implementação.',
     'SDD · Harness Engineering · Claude e Codex · MCP · RAG · Maestri',
@@ -61,7 +57,7 @@ const career = [
       'Squad Leader · 04/2021 – 09/2021',
       'Engenheiro de Software Frontend Pleno · 11/2020 – 09/2021',
     ],
-    text: 'Desenvolvimento frontend e ampliação da responsabilidade para a liderança de squad.',
+    text: 'Desenvolvimento de produtos de avaliação de experiências e liderança de squad, com organização das entregas e resolução de impedimentos.',
   },
   {
     company: 'Embraer',
@@ -70,7 +66,7 @@ const career = [
       'Analista de Sistemas Financeiros · 09/2020 – 11/2020',
       'Estágio em Análise de Sistemas · 02/2020 – 09/2020',
     ],
-    text: 'Experiência em análise de sistemas e no contexto de sistemas financeiros.',
+    text: 'Sistemas financeiros com Java e Spring Boot, com atuação na separação e reintegração de bases corporativas e foco em consistência dos dados.',
   },
   {
     company: 'Anova Sistemas',
@@ -93,53 +89,24 @@ const career = [
 ];
 ---
 
-<div class="v2-strip shell" aria-label="Amplitude de atuação">
-  <span>Backend & arquitetura</span>
-  <span>Produtos & marketplaces</span>
-  <span>Pagamentos & financeiro</span>
-  <span>Pessoas & IA</span>
-</div>
-<div class="v3-brands shell" aria-label="Empresas da minha trajetória">
-  <p>Experiência construída em</p>
-  <div>
-    {[
-      'Qeevo Group',
-      'Quero Educação',
-      'Melhor Escola',
-      'SoluCX',
-      'Embraer',
-    ].map((company) => (
-      <a href="#trajetoria">
-        <img
-          src={companyLogos[company]}
-          width="100"
-          height="100"
-          alt=""
-          loading="lazy"
-        />
-        <span>{company}</span>
-      </a>
-    ))}
-  </div>
-</div>
 <section
   class="v2-transform shell section-space"
+  id="impacto"
   aria-labelledby="transform-title"
   data-reveal
 >
   <div class="v2-section-top">
     <p class="eyebrow">Uma transformação concreta</p>
-    <span class="v2-index">01 / IMPACTO</span>
   </div>
   <h2 id="transform-title">
-    O pagamento aprova.
+    Da venda ao Financeiro.
     <br />
-    <span>Minha engenharia continua.</span>
+    <span>Menos consolidação manual.</span>
   </h2>
   <p class="v2-lead">
     Reconstruí a arquitetura que conecta a venda à operação financeira. O
-    efeito: grande parte da consolidação e da carga no Protheus passou a ser
-    automatizada.
+    efeito: grande parte da consolidação e da carga no sistema de gestão TOTVS
+    Protheus passou a ser automatizada.
   </p>
   <div class="v2-change-grid">
     <div class="v2-before">
@@ -151,7 +118,7 @@ const career = [
       </h3>
       <p>
         O Financeiro reunia arquivos Excel de diferentes áreas, tratava os dados
-        e fazia a carga no ERP.
+        e fazia a carga no sistema de gestão.
       </p>
       <div class="v2-flow" aria-hidden="true">
         <span>Planilhas</span>
@@ -234,7 +201,66 @@ const career = [
     Entenda a arquitetura e minha contribuição <span aria-hidden="true">↗</span>
   </a>
 </section>
+<section
+  class="impact-highlights shell"
+  aria-label="Outras entregas de impacto"
+>
+  <article>
+    <p class="eyebrow">Publicação de sites</p>
+    <h2>Uma plataforma. Diferentes instituições.</h2>
+    <p>
+      Construí a plataforma e a gestão de conteúdo para publicar sites de
+      faculdades com uma base compartilhada, preservando a identidade de cada
+      instituição.
+    </p>
+    <p class="impact-role">
+      Construção como Engineering Manager na Quero Educação.
+    </p>
+    <a class="text-link" href="/projetos/plataforma-de-publicacao/">
+      Conheça a plataforma <span aria-hidden="true">↗</span>
+    </a>
+  </article>
+  <article>
+    <p class="eyebrow">Marketplaces e compra</p>
+    <h2>Da descoberta da oferta ao pagamento.</h2>
+    <p>
+      Construí experiências de busca, administração e compra em marketplaces
+      educacionais, conectando desenvolvimento web, pagamentos e integrações
+      financeiras.
+    </p>
+    <p class="impact-role">
+      Atuação como desenvolvedor e Staff, em etapas distintas da trajetória.
+    </p>
+    <a class="text-link" href="/projetos/marketplaces-e-busca/">
+      Conheça essa jornada <span aria-hidden="true">↗</span>
+    </a>
+  </article>
+</section>
 <ProjectShowcase />
+<div class="v3-brands shell" aria-label="Empresas da minha trajetória">
+  <p>Experiência construída em</p>
+  <div>
+    {[
+      'Qeevo Group',
+      'Quero Educação',
+      'Melhor Escola',
+      'SoluCX',
+      'Embraer',
+    ].map((company) => (
+      <a href="#trajetoria">
+        <img
+          src={companyLogos[company]}
+          width="100"
+          height="100"
+          alt=""
+          loading="lazy"
+        />
+        <span>{company}</span>
+      </a>
+    ))}
+  </div>
+</div>
+
 <section
   class="shell section-space"
   id="casos"
@@ -243,7 +269,6 @@ const career = [
   <span id="projetos" class="v2-anchor"></span>
   <div class="v2-section-top">
     <p class="eyebrow">Projetos em profundidade</p>
-    <span class="v2-index">02 / CONSTRUÇÃO</span>
   </div>
   <div class="v2-heading-row">
     <h2 id="projects-title">
@@ -257,7 +282,7 @@ const career = [
     </p>
   </div>
   <div class="v2-project-grid">
-    {caseStudies.map((study, index) => (
+    {caseStudies.map((study) => (
       <a
         class="v2-project"
         href={`/projetos/${study.slug}/`}
@@ -265,7 +290,6 @@ const career = [
         data-reveal
       >
         <div class="v2-project-top">
-          <span>0{index + 1}</span>
           <span aria-hidden="true">↗</span>
         </div>
         <p class="v2-category">{study.category}</p>
@@ -291,7 +315,6 @@ const career = [
 >
   <div class="v2-section-top">
     <p class="eyebrow">Engenharia de ponta a ponta</p>
-    <span class="v2-index">03 / REPERTÓRIO</span>
   </div>
   <h2 id="expertise-title">
     Profundidade técnica.
@@ -299,9 +322,8 @@ const career = [
     <span>Visão do todo.</span>
   </h2>
   <div class="v2-expertise-grid">
-    {expertise.map(([number, title, body, stack]) => (
+    {expertise.map(([title, body, stack]) => (
       <article class="v2-expertise-card" data-reveal>
-        <span class="v2-number">{number}</span>
         <h3>{title}</h3>
         <p>{body}</p>
         <p class="v2-stack">{stack}</p>
@@ -309,9 +331,7 @@ const career = [
     ))}
   </div>
   <div class="v2-motion-bar">
-    <p>
-      Um pouco de movimento ajuda a contar a história. Você escolhe o ritmo.
-    </p>
+    <p>Ajuste os efeitos de movimento ao seu ritmo de leitura.</p>
     <button
       class="motion-toggle"
       data-motion-toggle
@@ -328,7 +348,6 @@ const career = [
 >
   <div class="v2-section-top">
     <p class="eyebrow">Liderar também é construir</p>
-    <span class="v2-index">04 / PESSOAS</span>
   </div>
   <div class="v2-heading-row">
     <h2 id="leadership-title">
@@ -344,7 +363,7 @@ const career = [
   </div>
   <div class="v2-leadership-grid">
     <article data-reveal>
-      <span>01 / PRODUTO & FINANCEIRO</span>
+      <span>Produto e Financeiro</span>
       <h3>Traduzir o negócio em arquitetura.</h3>
       <p>
         Conduzi a construção do Livro Razão junto ao Product Manager, tomando
@@ -353,7 +372,7 @@ const career = [
       </p>
     </article>
     <article data-reveal>
-      <span>02 / SEGURANÇA & OPERAÇÃO</span>
+      <span>Segurança e operação</span>
       <h3>Saber quem mudou o quê.</h3>
       <p>
         Iniciei a substituição de contas administrativas compartilhadas por
@@ -362,12 +381,12 @@ const career = [
       </p>
     </article>
     <article data-reveal>
-      <span>03 / QUALIDADE & TIME</span>
-      <h3>Dar condições para entregar.</h3>
+      <span>Qualidade e time</span>
+      <h3>Compartilhar contexto. Desenvolver pessoas.</h3>
       <p>
-        Construí pipelines de testes, análise de código e build para novos
-        projetos. Trabalho com SRE na infraestrutura e com o time em revisões,
-        mentoria, contratação e compartilhamento de conhecimento.
+        Conduzo mentoria, ciclos de feedback e desenvolvimento de pessoas. Levo
+        a experiência de ensino para as revisões e discussões técnicas,
+        compartilhando conhecimento e conectando o time a Produto e Financeiro.
       </p>
     </article>
   </div>
@@ -417,7 +436,6 @@ const career = [
 >
   <div class="v2-section-top">
     <p class="eyebrow">A trajetória inteira importa</p>
-    <span class="v2-index">05 / PERCURSO</span>
   </div>
   <h2 id="career-title">
     Tecnologia. Ensino.

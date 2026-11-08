@@ -3,8 +3,8 @@ import PortfolioBody from '../components/PortfolioBody.astro';
 import { site } from '../content/portfolio';
 import '../styles/global.css';
 const nav = [
-  { href: '#trabalho', label: 'Trabalho' },
-  { href: '#abordagem', label: 'Abordagem' },
+  { href: '#impacto', label: 'Impacto' },
+  { href: '#projetos', label: 'Projetos' },
   { href: '#trajetoria', label: 'Trajetória' },
 ];
 const person = {
@@ -108,9 +108,9 @@ const person = {
     <main id="conteudo">
       <section class="hero shell" id="inicio" aria-labelledby="hero-title">
         <div class="hero-copy" data-hero-copy>
+          <p class="hero-name">{site.name}</p>
           <p class="role-label">
-            <span aria-hidden="true"></span>
-            {site.role}
+            {site.role} <span aria-hidden="true">·</span> {site.employer}
           </p>
           <h1 id="hero-title">
             {site.headlineLines.map((line) => (
@@ -118,41 +118,31 @@ const person = {
             ))}
           </h1>
           <p class="hero-intro">{site.intro}</p>
+          <div class="hero-opportunities">
+            <span>{site.opportunitiesLabel}</span>
+            <p>{site.opportunities}</p>
+          </div>
           <div class="hero-actions">
-            <a class="button button-primary" href="#trabalho">
-              Conheça meu trabalho{' '}
-              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M4 10h12m-5-5 5 5-5 5" />
-              </svg>
-            </a>
             <a
-              class="text-link"
+              class="button button-primary"
               href={site.linkedin}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Meu LinkedIn <span aria-hidden="true">↗</span>
+              Conversar no LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button button-outline" href="#impacto">
+              Ver o impacto do meu trabalho
             </a>
           </div>
-          <div class="hero-note">
-            <span class="note-line" aria-hidden="true"></span>
-            <p>
-              Uma trajetória em tecnologia desde 2014.
-              <br />
-              Da sala de aula à arquitetura financeira.
-            </p>
-          </div>
+          <a class="text-link hero-resume" href={site.resumeHref}>
+            {site.resumeLabel} <span aria-hidden="true">↗</span>
+          </a>
         </div>
         <div class="hero-art" data-hero-portrait>
           <div class="portrait-stage" data-tilt>
             <div class="portrait-orbit orbit-one" aria-hidden="true"></div>
             <div class="portrait-orbit orbit-two" aria-hidden="true"></div>
-            <span class="stage-cross cross-one" aria-hidden="true">
-              +
-            </span>
-            <span class="stage-cross cross-two" aria-hidden="true">
-              +
-            </span>
             <div class="portrait-frame">
               <img
                 class="hero-portrait"
@@ -163,33 +153,13 @@ const person = {
                 loading="eager"
                 fetchpriority="high"
               />
-              <div class="portrait-caption">
-                <span>Rodolfo dos Santos</span>
-                <span>Implementação · arquitetura · liderança.</span>
-              </div>
-            </div>
-            <div class="floating-note floating-architecture" aria-hidden="true">
-              <span class="floating-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 17l9 5 9-5" />
-                </svg>
-              </span>
-              <div>
-                <span>Payments Engineering Manager</span>
-                <strong>Qeevo Group</strong>
-              </div>
-            </div>
-            <div class="floating-note floating-code" aria-hidden="true">
-              <span class="status-dot"></span>
-              <span>Construir. Conectar. Evoluir.</span>
             </div>
           </div>
-          <div class="portrait-footnote">
-            <span class="mini-orbit" aria-hidden="true"></span>Software com
-            profundidade. Pessoas no centro.
-          </div>
+          <p class="portrait-footnote">
+            Liderança com atuação direta na construção de software.
+          </p>
         </div>
-        <a class="scroll-cue" href="#trabalho">
+        <a class="scroll-cue" href="#impacto">
           <span class="scroll-track" aria-hidden="true">
             <i></i>
           </span>
@@ -206,14 +176,14 @@ const person = {
         <div class="contact-glow" aria-hidden="true"></div>
         <p class="section-intro">Boas conexões começam com uma conversa</p>
         <h2 id="contact-title">
-          O próximo desafio
+          Vamos conversar
           <br />
-          pode conectar a gente.
+          sobre oportunidades.
         </h2>
         <p>
-          Vamos conversar sobre software, arquitetura,
-          <br class="desktop-break" /> engenharia com IA ou desenvolvimento de
-          pessoas.
+          Engenharia Sênior, Staff ou gestão de engenharia.
+          <br class="desktop-break" /> Conheça minha trajetória e vamos falar
+          sobre o desafio do seu time.
         </p>
         <div class="contact-actions">
           <a
@@ -227,16 +197,8 @@ const person = {
               <path d="M5 15 15 5M5 5h10v10" />
             </svg>
           </a>
-          <a
-            class="button button-outline"
-            href={site.github}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M9 19c-4 1-4-2-6-2m12 5v-3.5c0-1 .1-1.5-.5-2 3.2-.4 6.5-1.5 6.5-7A5.5 5.5 0 0 0 19.5 6a5 5 0 0 0-.1-3.5S18.2 2.1 15 4a13 13 0 0 0-6 0C5.8 2.1 4.6 2.5 4.6 2.5A5 5 0 0 0 4.5 6 5.5 5.5 0 0 0 3 9.5c0 5.5 3.3 6.6 6.5 7-.6.5-.6 1.1-.5 2V22" />
-            </svg>
-            Explorar meu GitHub
+          <a class="button button-outline" href={site.resumeHref}>
+            {site.resumeLabel}
           </a>
         </div>
       </section>

@@ -1,10 +1,24 @@
 # Estado de continuação
 
+Atualizado em 08/11/2026.
+
+## Estado atual: implementação RH
+
+Versão local orientada a recrutadores implementada, com hero/casos revisados, três destaques, seis casos preservados, currículo HTML público, sitemap e checker de fragmentos. [IMPLEMENTACAO-RH.md](IMPLEMENTACAO-RH.md) registra a entrega e seus limites; [tasks.md](../specs/001-portfolio-recrutadores/tasks.md) separa implementação de validação.
+
+Checks integrados de código aprovados: Node 24.14.1, privacidade (97 caminhos), lint (21 arquivos), formatação, tipos (27 arquivos) sem diagnósticos, 15 testes, build de oito páginas+sitemap e referências de 12 arquivos HTML/CSS. Harness-score 1.8.4: L4, 103/105 (98%), escopo repo. A documentação de encerramento foi atualizada depois dessa execução. A nota anterior **7,43/10** permanece; não houve nova avaliação de produto.
+
+**Pendentes:** revisão visual e geometria em 360/390/768/1280/1440, primeira tela móvel, teclado/menu/foco, zoom, noJS/reduced motion em execução, leitor de tela, contraste integral e impressão/paginação. CUA nativo e host de navegador falharam. Lighthouse e teste com recrutadores não foram executados, sem participantes nesta etapa. Capturas anteriores são histórico e não validam esta versão.
+
+O orquestrador prepara commit/push na main e conferência do CI; até o registro efetivo, envio desta etapa permanece pendente. **Deploy desta implementação não foi executado.** Próximo passo de qualidade: executar QA no navegador e impressão quando disponíveis, corrigir achados e reavaliar com os pesos congelados. Não apresentar esta versão como revisada visualmente.
+
+## Histórico anterior
+
+As seções abaixo registram entregas anteriores. Seus commits, medições e capturas não comprovam os aceites da implementação RH de 08/11/2026.
+
 ## Planejamento para recrutadores, 08/11/2026
 
 Nova etapa somente de planejamento: [spec](../specs/001-portfolio-recrutadores/spec.md), [preferências](../specs/001-portfolio-recrutadores/preferencias.md), [plano técnico](../specs/001-portfolio-recrutadores/plan.md) e [tarefas](../specs/001-portfolio-recrutadores/tasks.md). Referência: avaliação RH da versão f6d620b, baseline provisória 7,43/10. A implementação desta etapa e suas medições permanecem pendentes; specs não representam nota 10 ou nova revisão no navegador. T00 concluída por revisão interna em 08/11/2026, com requisitos reconciliados e HTML de currículo curado ativado como decisão editorial revisável. Próximo passo: T01, iniciar conteúdo RH com donos de arquivos definidos. Orquestrador concentra commit/push na main, sem PR/branches, e deploy separado. Delegação local nesta sessão, sem canvas Maestri conectado. As entregas históricas abaixo permanecem como registro.
-
-Atualizado em 06/11/2026.
 
 ## Entrega atual
 

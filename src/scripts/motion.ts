@@ -103,17 +103,12 @@ function setupMotion(forceReduced = false): () => void {
       const hero = gsap.timeline({ defaults: { ease: 'power3.out' } });
       if (heroCopy)
         hero.from(heroCopy.children, {
-          y: 22,
-          opacity: 0.65,
-          duration: 0.85,
-          stagger: 0.08,
+          y: 10,
+          duration: 0.5,
+          stagger: 0.025,
         });
       if (heroPortrait)
-        hero.from(
-          heroPortrait,
-          { y: 28, scale: 0.975, opacity: 0.75, duration: 1.15 },
-          0.12,
-        );
+        hero.from(heroPortrait, { y: 12, scale: 0.99, duration: 0.7 }, 0.12);
 
       const progress = document.querySelector<HTMLElement>('[data-progress]');
       if (progress)
@@ -127,17 +122,8 @@ function setupMotion(forceReduced = false): () => void {
           },
         );
 
-      for (const element of document.querySelectorAll<HTMLElement>(
-        '[data-reveal]',
-      )) {
-        gsap.from(element, {
-          y: 22,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: element, start: 'top 93%', once: true },
-        });
-      }
-
+      // Reading content stays still and visible. Scroll motion explains the
+      // financial flow below, rather than delaying each paragraph's arrival.
       const architecture = document.querySelector<HTMLElement>(
         '[data-architecture]',
       );
@@ -192,17 +178,6 @@ function setupMotion(forceReduced = false): () => void {
 
       const pointerCleanup: Array<() => void> = [];
       if (conditions.desktop) {
-        if (heroPortrait)
-          gsap.to(heroPortrait, {
-            y: -25,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: heroPortrait.parentElement,
-              start: 'top top',
-              end: 'bottom top',
-              scrub: 1,
-            },
-          });
         for (const card of document.querySelectorAll<HTMLElement>(
           '[data-tilt]',
         )) {

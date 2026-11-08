@@ -1,0 +1,504 @@
+---
+import { site } from '../content/portfolio';
+import { publicResume as resume } from '../content/public-resume';
+
+const canonical = 'https://rodolfo-santos.github.io/curriculo/';
+const title = `${resume.name} | Currículo público`;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0d12" />
+    <title>{title}</title>
+    <meta name="description" content={resume.description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={resume.description} />
+    <meta property="og:url" content={canonical} />
+    <meta
+      property="og:image"
+      content="https://rodolfo-santos.github.io/images/portrait.webp"
+    />
+    <meta property="og:image:alt" content={`Retrato de ${resume.name}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="preload"
+      href="/fonts/manrope-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  </head>
+  <body>
+    <a class="resume-skip" href="#curriculo">
+      Pular para o currículo
+    </a>
+    <nav class="resume-toolbar" aria-label="Ações do currículo">
+      <a href="/">Voltar ao portfólio</a>
+      <div>
+        <a href={site.linkedin}>Conversar no LinkedIn</a>
+        <button id="resume-print" type="button" hidden>
+          Imprimir currículo
+        </button>
+      </div>
+    </nav>
+    <main class="resume-paper" id="curriculo">
+      <header class="resume-heading">
+        <p class="resume-document-label">Currículo público</p>
+        <h1>{resume.name}</h1>
+        <p class="resume-positioning">{resume.positioning}</p>
+        <p class="resume-current">
+          {resume.currentRole} · {resume.currentEmployer}
+        </p>
+        <p class="resume-objective">
+          <span>Interesse em oportunidades:</span> {resume.opportunities}
+        </p>
+        <div class="resume-connections">
+          <a href={site.linkedin}>linkedin.com/in/rodolfosantos29</a>
+          <a href={site.github}>github.com/rodolfo-santos</a>
+          <a href="/">rodolfo-santos.github.io</a>
+        </div>
+        <p class="resume-updated">
+          Conteúdo atualizado em{' '}
+          <time datetime={resume.updatedAt}>{resume.updatedLabel}</time>
+        </p>
+      </header>
+
+      <section aria-labelledby="resumo-title">
+        <h2 id="resumo-title">Resumo profissional</h2>
+        {resume.summary.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+      </section>
+
+      <section aria-labelledby="entregas-title">
+        <h2 id="entregas-title">Realizações em destaque</h2>
+        <div class="resume-achievements">
+          {resume.achievements.map((achievement) => (
+            <article>
+              <h3>{achievement.title}</h3>
+              <p>{achievement.text}</p>
+              <a class="resume-case-link" href={achievement.href}>
+                Conheça o projeto
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section aria-labelledby="experiencia-title">
+        <h2 id="experiencia-title">Experiência profissional</h2>
+        {resume.experience.map((experience) => (
+          <article class="resume-experience">
+            <div class="resume-experience-heading">
+              <h3>{experience.company}</h3>
+              {experience.roles.map((role) => (
+                <div class="resume-role">
+                  <h4>{role.title}</h4>
+                  <p class="resume-period">{role.period}</p>
+                </div>
+              ))}
+            </div>
+            {experience.highlights.length > 0 && (
+              <ul>
+                {experience.highlights.map((highlight) => (
+                  <li>{highlight}</li>
+                ))}
+              </ul>
+            )}
+          </article>
+        ))}
+      </section>
+
+      <section aria-labelledby="formacao-title">
+        <h2 id="formacao-title">Formação acadêmica</h2>
+        {resume.education.map((education) => (
+          <article class="resume-education">
+            <h3>{education.degree}</h3>
+            <p>{education.institution}</p>
+            <p class="resume-period">{education.period}</p>
+          </article>
+        ))}
+      </section>
+      <footer class="resume-footer">
+        <p>
+          Mais projetos e detalhes da trajetória em{' '}
+          <a href="/">rodolfo-santos.github.io</a>.
+        </p>
+        <a href={site.linkedin}>Conversar sobre oportunidades no LinkedIn</a>
+      </footer>
+    </main>
+    <script>
+      const printButton =
+        document.querySelector<HTMLButtonElement>('#resume-print');
+      if (printButton) {
+        printButton.hidden = false;
+        printButton.addEventListener('click', () => window.print());
+      }
+    </script>
+  </body>
+</html>
+
+<style>
+  @font-face {
+    font-family: Manrope;
+    src: url('/fonts/manrope-latin.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+  }
+  :global(html:has(.resume-paper)) {
+    color-scheme: dark;
+    background: #0b0d12;
+    scroll-behavior: smooth;
+  }
+  :global(body:has(.resume-paper)) {
+    margin: 0;
+    color: #f3f1f7;
+    font-family: Manrope, system-ui, sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  a {
+    color: inherit;
+    text-underline-offset: 4px;
+  }
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+  :is(a, button):focus-visible {
+    outline: 3px solid #77ddc4;
+    outline-offset: 5px;
+  }
+  .resume-skip {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    padding: 12px;
+    background: #f3f1f7;
+    color: #132f4a;
+    transform: translateY(-200%);
+  }
+  .resume-skip:focus {
+    transform: translateY(0);
+  }
+  .resume-toolbar {
+    max-width: 1020px;
+    margin: auto;
+    padding: 28px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+  }
+  .resume-toolbar > div {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .resume-toolbar a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .resume-toolbar button {
+    min-height: 44px;
+    padding: 11px 18px;
+    font:
+      600 14px Manrope,
+      system-ui,
+      sans-serif;
+    color: #f3f1f7;
+    border: 1px solid #b49af9;
+    border-radius: 6px;
+    background: #553b8b;
+    cursor: pointer;
+  }
+  .resume-toolbar button:hover {
+    background: #6548a0;
+  }
+  .resume-paper {
+    width: min(972px, calc(100% - 48px));
+    margin: 0 auto 64px;
+    padding: 64px 72px;
+    color: #202c3a;
+    background: #fff;
+    border-top: 5px solid #9d7dde;
+    border-radius: 3px;
+    box-shadow: 0 20px 80px #0004;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  .resume-paper a {
+    color: #234f71;
+    overflow-wrap: anywhere;
+  }
+  .resume-paper a:focus-visible {
+    outline-color: #234f71;
+  }
+  .resume-paper :is(h1, h2, h3, h4, p) {
+    margin: 0;
+  }
+  .resume-heading {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #afc6bf;
+  }
+  .resume-document-label {
+    color: #627080;
+    font-size: 13px;
+    margin-bottom: 12px !important;
+  }
+  h1 {
+    color: #15334f;
+    font-size: clamp(27px, 3.6vw, 38px);
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+  .resume-positioning {
+    margin-top: 12px !important;
+    font-size: 18px;
+    font-weight: 600;
+    color: #264a69;
+  }
+  .resume-current {
+    margin-top: 9px !important;
+    font-weight: 700;
+  }
+  .resume-objective {
+    margin-top: 12px !important;
+    font-size: 14px;
+  }
+  .resume-objective span {
+    font-weight: 700;
+  }
+  .resume-connections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  .resume-connections a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .resume-updated {
+    margin-top: 14px !important;
+    color: #5c6977;
+    font-size: 13px;
+  }
+  section {
+    margin-top: 32px;
+  }
+  h2 {
+    padding-bottom: 7px;
+    margin-bottom: 18px !important;
+    border-bottom: 1px solid #749d8e;
+    color: #173c5d;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    break-after: avoid;
+  }
+  section > p + p {
+    margin-top: 13px !important;
+  }
+  h3 {
+    color: #203e59;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.45;
+    break-after: avoid;
+  }
+  .resume-achievements article + article {
+    margin-top: 22px;
+  }
+  .resume-achievements h3 + p {
+    margin-top: 6px;
+  }
+  .resume-case-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 6px;
+    font-size: 13px;
+  }
+  .resume-experience {
+    padding-block: 0 26px;
+  }
+  .resume-experience:last-child {
+    padding-bottom: 0;
+  }
+  .resume-experience-heading {
+    break-inside: avoid;
+    break-after: avoid;
+  }
+  .resume-role {
+    margin-top: 7px;
+  }
+  h4 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .resume-period {
+    color: #566676;
+    font-size: 13px;
+  }
+  ul {
+    padding-left: 20px;
+    margin-block: 12px 0;
+  }
+  li {
+    padding-left: 2px;
+    margin-block: 5px;
+  }
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+  .resume-education {
+    margin-top: 18px;
+    break-inside: avoid;
+  }
+  .resume-education h3 {
+    font-size: 16px;
+  }
+  .resume-footer {
+    margin-top: 32px;
+    padding-top: 22px;
+    border-top: 1px solid #afc6bf;
+    font-size: 13px;
+  }
+  .resume-footer > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 8px;
+  }
+  @media (max-width: 650px) {
+    .resume-toolbar {
+      padding: 16px 20px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .resume-toolbar > div {
+      flex-wrap: wrap;
+      gap: 8px 20px;
+    }
+    .resume-paper {
+      width: calc(100% - 24px);
+      padding: 32px 22px;
+      margin-bottom: 24px;
+    }
+    .resume-positioning {
+      font-size: 17px;
+    }
+    .resume-connections {
+      display: grid;
+      gap: 5px;
+    }
+    h1 {
+      font-size: 28px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global(html:has(.resume-paper)) {
+      scroll-behavior: auto;
+    }
+  }
+  @page {
+    size: A4;
+    margin: 16mm;
+  }
+  @media print {
+    :global(html:has(.resume-paper)),
+    :global(body:has(.resume-paper)) {
+      background: #fff;
+      color: #202c3a;
+      color-scheme: light;
+    }
+    .resume-toolbar,
+    .resume-skip,
+    .resume-case-link {
+      display: none !important;
+    }
+    .resume-paper {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+    h1 {
+      font-size: 25pt;
+    }
+    .resume-positioning {
+      font-size: 12pt;
+    }
+    .resume-heading {
+      padding-bottom: 15pt;
+    }
+    .resume-current,
+    .resume-objective {
+      font-size: 10pt;
+    }
+    .resume-connections,
+    .resume-updated,
+    .resume-period,
+    .resume-footer {
+      font-size: 8.5pt;
+    }
+    section {
+      margin-top: 20pt;
+    }
+    h2 {
+      font-size: 11pt;
+      margin-bottom: 10pt !important;
+    }
+    h3 {
+      font-size: 11pt;
+    }
+    h4,
+    .resume-education h3 {
+      font-size: 10pt;
+    }
+    section > p + p {
+      margin-top: 7pt !important;
+    }
+    .resume-experience {
+      padding-bottom: 16pt;
+    }
+    .resume-achievements article + article {
+      margin-top: 11pt;
+    }
+    .resume-education {
+      margin-top: 12pt;
+    }
+    a {
+      text-decoration: none;
+    }
+    .resume-paper a {
+      min-height: 0;
+    }
+  }
+</style>
