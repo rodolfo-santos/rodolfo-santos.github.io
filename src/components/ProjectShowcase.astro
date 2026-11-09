@@ -7,71 +7,78 @@ import '../styles/project-showcase.css';
   class="project-showcase shell section-space"
   id="trabalho"
   aria-labelledby="showcase-title"
+  data-editorial-gallery
 >
-  <header class="project-showcase__header">
-    <h2 id="showcase-title">Produtos que saíram do código.</h2>
-    <p>
-      Sites, plataformas e experiências de compra que ajudei a construir. Aqui,
-      a engenharia ganha uma forma que você pode ver.
-    </p>
-  </header>
+  <div class="project-showcase__inner">
+    <header class="project-showcase__header">
+      <h2 id="showcase-title">Produtos que saíram do código.</h2>
+      <p>
+        Sites, plataformas e experiências de compra que ajudei a construir.
+        Conheça os produtos e o meu papel em cada trabalho.
+      </p>
+    </header>
 
-  <p class="project-showcase__verification">
-    Sites em produção verificados em{' '}
-    <time datetime="2026-11-08">08/11/2026</time>. As imagens são registros
-    publicados no LinkedIn; os links externos levam aos sites atuais.
-  </p>
-
-  <div class="project-showcase__grid">
-    {showcaseProducts.map((product, index) => (
-      <article
-        class="project-showcase__product"
-        style={`--product-color: ${product.color}`}
-      >
-        <a
-          class="project-showcase__link"
-          href={product.href}
-          aria-labelledby={`showcase-product-${index}`}
+    <ul class="project-showcase__grid" aria-label="Produtos selecionados">
+      {showcaseProducts.map((product, index) => (
+        <li
+          class="project-showcase__product"
+          style={`--product-color: ${product.color}`}
+          data-gallery-card
         >
           <figure class="project-showcase__figure">
-            <div class="project-showcase__image-frame">
-              <img
-                src={product.image.src}
-                alt={product.image.alt}
-                width={product.image.width}
-                height={product.image.height}
-                loading="lazy"
-                decoding="async"
-                sizes="(min-width: 1100px) 380px, (min-width: 761px) 30vw, calc(100vw - 40px)"
-              />
+            <div class="project-showcase__preview" data-gallery-preview>
+              <div class="project-showcase__image-frame">
+                <img
+                  src={product.image.src}
+                  alt={product.image.alt}
+                  width={product.image.width}
+                  height={product.image.height}
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 1000px) 380px, (min-width: 700px) 50vw, calc(100vw - 40px)"
+                />
+              </div>
             </div>
             <figcaption>{product.image.caption}</figcaption>
           </figure>
+
           <div class="project-showcase__copy">
             <p class="project-showcase__role">{product.role}</p>
             <h3 id={`showcase-product-${index}`}>{product.title}</h3>
             <p class="project-showcase__description">{product.description}</p>
-            <span class="project-showcase__action">
-              Conheça a construção
-              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M4 10h12m-5-5 5 5-5 5" />
-              </svg>
-            </span>
+            <div class="project-showcase__actions">
+              <a
+                class="project-showcase__case"
+                href={product.href}
+                aria-label={`Conheça a construção: ${product.title}`}
+              >
+                Conheça a construção
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m-5-5 5 5-5 5" />
+                </svg>
+              </a>
+              <a
+                class="project-showcase__production"
+                href={product.productionHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-describedby={`showcase-product-${index}`}
+              >
+                <span>
+                  Site em produção <span aria-hidden="true">↗</span>
+                </span>
+                <small>Abre em outra aba</small>
+              </a>
+            </div>
           </div>
-        </a>
-        <a
-          class="project-showcase__production"
-          href={product.productionHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Visitar ${product.title} em produção (abre em outra aba)`}
-        >
-          <span>
-            Visitar site em produção <span aria-hidden="true">↗</span>
-          </span>
-          <small>Abre em outra aba</small>
-        </a>
-      </article>
-    ))}
+        </li>
+      ))}
+    </ul>
+
+    <p class="project-showcase__verification">
+      Imagens publicadas no LinkedIn. Os sites atuais foram verificados em{' '}
+      <time datetime="2026-11-08">08/11/2026</time> e podem ter evoluído desde
+      minha contribuição.
+    </p>
   </div>
 </section>

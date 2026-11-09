@@ -1,5 +1,24 @@
 # Estado de continuação
 
+## Piloto editorial implementado, 09/11/2026
+
+Abertura, galeria e encerramento reconstruídos com creme/grafite/violeta,
+tipografia editorial, fotografia e snapshots reais, profundidade em rolagem e
+contato/currículo na primeira tela móvel. Conteúdo e oito rotas preservados.
+[Relatório e evidências](IMPLEMENTACAO-EDITORIAL.md) descrevem escopo e limites.
+
+Validação local: 40 combinações de rota/largura sem overflow, imagens quebradas
+ou erros de JavaScript; menu/Escape/foco, noJS e movimento reduzido conferidos.
+Três Lighthouse móveis: desempenho 98, acessibilidade/boas práticas/SEO 100;
+medianas LCP 2,43 s, CLS 0 e TBT 2 ms. Laboratório local, sem dados de campo.
+Verify aprovado, 15 testes e oito páginas. Sem nova nota visual ou de RH.
+
+Os agentes entregaram composição, galeria e movimento; seus créditos terminaram
+na revisão. Integração e QA concluídos pelo orquestrador, sem revisão final
+independente. Envio e publicação seguem em andamento até registro do resultado.
+Próxima evolução: comparar a transformação de previews e ampliar a curadoria
+visual dos casos, preservando a experiência já validada.
+
 ## Discovery editorial, 09/11/2026
 
 O titular forneceu uma nova referência audiovisual para a apresentação. A [spec 004](../specs/004-referencia-editorial/README.md) traduz a referência em uma proposta editorial de creme, grafite e violeta, retrato real, galeria de trabalhos, trajetória, palestras e movimento progressivo. Valores de paleta, técnica e composição são propostas da equipe. Conta exibida identificada; template, repositório correspondente e licença não confirmados.

@@ -1,7 +1,8 @@
 # Refatoração editorial guiada pela referência em vídeo
 
-Data: 09/11/2026. Estado: proposta de implementação, ainda não construída ou
-validada. Esta spec complementa os requisitos de
+Data: 09/11/2026. Estado: primeiro piloto implementado e validado no escopo de
+[IMPLEMENTACAO-EDITORIAL.md](../../docs/IMPLEMENTACAO-EDITORIAL.md), com a evolução
+completa ainda pendente. Esta spec complementa os requisitos de
 [portfólio para recrutadores](../001-portfolio-recrutadores/spec.md) e suas
 [preferências confirmadas](../001-portfolio-recrutadores/preferencias.md).
 
@@ -165,7 +166,10 @@ permanecem estáveis para uma futura avaliação comparável.
 ## Estado e fontes de trabalho
 
 E0 está concluído como discovery e especificação, com origem e licença ainda não
-resolvidas. E1–E6 permanecem pendentes de execução da refatoração. Código e checagens da versão anterior não validam esta proposta.
+resolvidas. E1 reaproveitou conteúdo e ativos públicos existentes; E2–E4 têm o
+primeiro corte implementado. E5 foi executado para esse corte com limites no
+relatório. A matriz completa de aceites e a evolução da refatoração permanecem
+abertas. E6 depende do envio e da publicação registrados em docs/ESTADO.md.
 A origem do vídeo segue
 em investigação; não existe template selecionado para baixar/incorporar.
 

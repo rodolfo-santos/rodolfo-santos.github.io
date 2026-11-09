@@ -2,6 +2,7 @@
 import PortfolioBody from '../components/PortfolioBody.astro';
 import { site } from '../content/portfolio';
 import '../styles/global.css';
+import '../styles/editorial.css';
 const nav = [
   { href: '#impacto', label: 'Impacto' },
   { href: '#projetos', label: 'Projetos' },
@@ -22,7 +23,10 @@ const person = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b0d12" />
+    <meta name="theme-color" content="#f3f0e8" />
+    <script is:inline>
+      document.documentElement.classList.add('js-menu-ready');
+    </script>
     <title>{site.name} | Engenharia, arquitetura e liderança</title>
     <meta name="description" content={site.intro} />
     <link rel="canonical" href="https://rodolfo-santos.github.io/" />
@@ -57,27 +61,20 @@ const person = {
     />
     <script type="application/ld+json" set:html={JSON.stringify(person)} />
   </head>
-  <body>
+  <body class="editorial-page">
     <a class="skip-link" href="#conteudo">
       Pular para o conteúdo
     </a>
     <div class="reading-progress" data-progress aria-hidden="true"></div>
-    <header class="site-header">
+    <header class="site-header editorial-header">
       <div class="header-inner shell">
-        <a class="brand" href="#inicio" aria-label={site.name + ', início'}>
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 36 36" fill="none">
-              <path
-                d="M7 27V9h8c8 0 9 11 0 11H7m8 0 8 7M30 9c-9-2-13 6-5 8 10 2 5 13-3 10"
-                stroke="currentColor"
-                stroke-width="2.7"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+        <a class="brand" href="#inicio">
+          <span class="editorial-monogram" aria-hidden="true">
+            r<span>.</span>s
           </span>
-          <span class="brand-name">
-            Rodolfo Santos<span>Software & arquitetura</span>
+          <span class="editorial-brand-caption">
+            Software, arquitetura
+            <br />e pessoas.
           </span>
         </a>
         <button
@@ -106,117 +103,141 @@ const person = {
       </div>
     </header>
     <main id="conteudo">
-      <section class="hero shell" id="inicio" aria-labelledby="hero-title">
-        <div class="hero-copy" data-hero-copy>
-          <p class="hero-name">{site.name}</p>
-          <p class="role-label">
-            {site.role} <span aria-hidden="true">·</span> {site.employer}
-          </p>
-          <h1 id="hero-title">
-            {site.headlineLines.map((line) => (
-              <span>{line}</span>
-            ))}
-          </h1>
-          <p class="hero-intro">{site.intro}</p>
-          <div class="hero-opportunities">
-            <span>{site.opportunitiesLabel}</span>
-            <p>{site.opportunities}</p>
+      <div class="editorial-opening">
+        <section
+          class="editorial-hero shell"
+          id="inicio"
+          aria-labelledby="hero-title"
+          data-editorial-hero
+        >
+          <div class="editorial-identity">
+            <h1 id="hero-title" data-editorial-title>
+              <span>Rodolfo</span>{' '}
+              <span>
+                dos Santos
+                <span class="editorial-name-stop" aria-hidden="true">
+                  .
+                </span>
+              </span>
+            </h1>
+            <p class="editorial-role">
+              <span>{site.role}</span>
+              <span class="editorial-employer">na {site.employer}</span>
+            </p>
           </div>
-          <div class="hero-actions">
-            <a
-              class="button button-primary"
-              href={site.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Conversar no LinkedIn <span aria-hidden="true">↗</span>
-            </a>
-            <a class="button button-outline" href="#impacto">
-              Ver o impacto do meu trabalho
-            </a>
-          </div>
-          <a class="text-link hero-resume" href={site.resumeHref}>
-            {site.resumeLabel} <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-        <div class="hero-art" data-hero-portrait>
-          <div class="portrait-stage" data-tilt>
-            <div class="portrait-orbit orbit-one" aria-hidden="true"></div>
-            <div class="portrait-orbit orbit-two" aria-hidden="true"></div>
-            <div class="portrait-frame">
+          <figure class="editorial-portrait" data-editorial-portrait>
+            <div class="editorial-photo-mat">
               <img
-                class="hero-portrait"
                 src="/images/portrait.webp"
                 width="460"
                 height="460"
                 alt={'Retrato de ' + site.name}
                 loading="eager"
                 fetchpriority="high"
+                decoding="async"
               />
             </div>
+            <figcaption>{site.roleDescription}</figcaption>
+          </figure>
+          <div class="editorial-introduction">
+            <h2>{site.headlineLines.join(' ')}</h2>
+            <p>{site.intro}</p>
+            <div class="editorial-actions">
+              <a
+                class="button button-primary"
+                href={site.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Conversar no LinkedIn <span aria-hidden="true">↗</span>
+              </a>
+              <a class="button editorial-resume" href={site.resumeHref}>
+                {site.resumeLabel} <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
-          <p class="portrait-footnote">
-            Liderança com atuação direta na construção de software.
-          </p>
-        </div>
-        <a class="scroll-cue" href="#impacto">
-          <span class="scroll-track" aria-hidden="true">
-            <i></i>
-          </span>
-          Explore o que eu construo
-        </a>
-      </section>
-      <PortfolioBody />
+          <a class="editorial-explore" href="#impacto">
+            <span>Explore o que eu construo</span>
+            <span class="editorial-explore-icon" aria-hidden="true">
+              ↓
+            </span>
+          </a>
+        </section>
+        <aside
+          class="editorial-availability shell"
+          aria-label={site.opportunitiesLabel}
+        >
+          <p>{site.opportunitiesLabel}</p>
+          <p>{site.opportunities}</p>
+          <a href="#trajetoria">
+            Conheça minha trajetória <span aria-hidden="true">↗</span>
+          </a>
+        </aside>
+      </div>
+      <div class="editorial-body" data-editorial-chapter>
+        <div
+          class="editorial-chapter-edge"
+          data-editorial-chapter-surface
+          aria-hidden="true"
+        ></div>
+        <PortfolioBody />
+      </div>
       <section
-        class="contact-section shell section-space"
+        class="contact-section editorial-contact"
         id="contato"
         aria-labelledby="contact-title"
-        data-reveal
       >
-        <div class="contact-glow" aria-hidden="true"></div>
-        <p class="section-intro">Boas conexões começam com uma conversa</p>
-        <h2 id="contact-title">
-          Vamos conversar
-          <br />
-          sobre oportunidades.
-        </h2>
-        <p>
-          Engenharia Sênior, Staff ou gestão de engenharia.
-          <br class="desktop-break" /> Conheça minha trajetória e vamos falar
-          sobre o desafio do seu time.
-        </p>
-        <div class="contact-actions">
-          <a
-            class="button button-primary"
-            href={site.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Conversar no LinkedIn{' '}
-            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M5 15 15 5M5 5h10v10" />
-            </svg>
-          </a>
-          <a class="button button-outline" href={site.resumeHref}>
-            {site.resumeLabel}
-          </a>
+        <div class="shell">
+          <div class="editorial-contact-intro">
+            <span>Rodolfo dos Santos</span>
+            <span>Uma próxima conversa.</span>
+          </div>
+          <h2 id="contact-title">
+            Vamos
+            <br />
+            <span>conversar.</span>
+          </h2>
+          <div class="editorial-contact-bottom">
+            <p>
+              Engenharia Sênior, Staff ou gestão de engenharia. Conheça minha
+              trajetória e vamos falar sobre o desafio do seu time.
+            </p>
+            <div class="contact-actions">
+              <a
+                class="button button-primary"
+                href={site.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Conversar no LinkedIn <span aria-hidden="true">↗</span>
+              </a>
+              <a class="button button-outline" href={site.resumeHref}>
+                {site.resumeLabel} <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
-    <footer class="site-footer shell">
+    <footer class="site-footer shell editorial-footer">
       <a class="footer-name" href="#inicio">
-        Rodolfo Santos<span>Engenharia que conecta.</span>
+        Rodolfo dos Santos<span>Software, arquitetura e pessoas.</span>
       </a>
-      <p>
-        Feito com intenção.
-        <br />E em constante evolução.
-      </p>
+      <a
+        class="editorial-footer-github"
+        href={site.github}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
       <a class="back-top" href="#inicio">
         Voltar ao início <span aria-hidden="true">↑</span>
       </a>
     </footer>
     <script>
       import '../scripts/motion';
+      import '../scripts/editorial-motion';
     </script>
   </body>
 </html>

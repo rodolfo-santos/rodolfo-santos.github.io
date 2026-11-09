@@ -33,6 +33,10 @@ src/ contém a interface; scripts/ e tests/ mantêm o harness executável.
 .agents/skills/ contém procedimentos específicos e portáveis deste projeto.
 Não introduzir servidor, banco, login ou integrações remotas sem necessidade do produto.
 Preservar grafite, violeta luminoso, fotografia real, profundidade e movimento ligado à rolagem.
+A referência audiovisual de 09/11/2026 orienta a nova abertura e galeria em creme,
+alternadas com capítulos em grafite. A evolução está especificada em
+specs/004-referencia-editorial/README.md; não restaurar a home antiga por causa
+da referência escura inicial.
 Conteúdo legível sem JavaScript; respeitar prefers-reduced-motion e navegação por teclado.
 Não usar scroll hijacking, carregamento bloqueante, flashes ou efeitos que prejudiquem o celular.
 Mudança visual exige inspeção de desktop/mobile e evidência real antes de declarar revisão visual.
