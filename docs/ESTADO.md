@@ -15,7 +15,13 @@ Verify aprovado, 15 testes e oito páginas. Sem nova nota visual ou de RH.
 
 Os agentes entregaram composição, galeria e movimento; seus créditos terminaram
 na revisão. Integração e QA concluídos pelo orquestrador, sem revisão final
-independente. Envio e publicação seguem em andamento até registro do resultado.
+independente. Código enviado diretamente à main no commit `660585e`, com
+[CI aprovado](https://github.com/rodolfo-santos/rodolfo-santos.github.io/actions/runs/42694991777)
+e [deploy concluído](https://github.com/rodolfo-santos/rodolfo-santos.github.io/actions/runs/42695153246).
+[Página publicada](https://rodolfo-santos.github.io/) conferida em Chromium,
+390 e 1440 px: novo layout, galeria e imagens presentes, HTTP 200, sem overflow
+ou erros de JavaScript. Este registro posterior não altera os arquivos do build
+publicado.
 Próxima evolução: comparar a transformação de previews e ampliar a curadoria
 visual dos casos, preservando a experiência já validada.
 

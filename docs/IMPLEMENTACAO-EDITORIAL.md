@@ -83,4 +83,7 @@ corte implementado. E5 foi executado no escopo descrito, com limites explícitos
 A evolução completa da spec continua: comparar efeitos de maior transformação,
 curar mais imagens reais, aprofundar a identidade visual dos casos e testar com
 recrutadores. Nenhuma nova nota de produto foi atribuída. Entrega por commit e
-push na main, sem PR; publicação manual somente após os checks finais.
+push na main, sem PR. Código `660585e`, CI 42694991777 e publicação manual
+42695153246 concluídos com sucesso. A página pública foi conferida em Chromium
+em 390 e 1440 px, com novo layout, imagens carregadas e sem erros de JavaScript
+ou overflow. A evolução completa da refatoração continua aberta.
