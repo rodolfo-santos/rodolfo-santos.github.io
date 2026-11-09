@@ -1,5 +1,11 @@
 # Estado de continuação
 
+## Discovery editorial, 09/11/2026
+
+O titular forneceu uma nova referência audiovisual para a apresentação. A [spec 004](../specs/004-referencia-editorial/README.md) traduz a referência em uma proposta editorial de creme, grafite e violeta, retrato real, galeria de trabalhos, trajetória, palestras e movimento progressivo. Valores de paleta, técnica e composição são propostas da equipe. Conta exibida identificada; template, repositório correspondente e licença não confirmados.
+
+Esta entrega é discovery e especificação. Não implementa a refatoração, não valida sua aparência, não altera a nota e não executa deploy. A revisão e as limitações da versão anterior continuam registradas abaixo. Próximo passo: integrar a análise visual, o mapa de movimento e a pesquisa de origem ao piloto E2, com conteúdo próprio revisado e donos de arquivos definidos. Fluxo preservado: commit/push direto na main, CI e publicação separados.
+
 ## Revisão nativa parcial, 08/11/2026
 
 Chrome nativo voltou a responder durante esta sessão. Foram observadas abertura desktop, primeira tela em 390×844 e 360×800, menu móvel (abrir, Escape, foco devolvido), galeria e palestra em 360 px, abertura do caso de publicação e currículo móvel. Capturas atuais em `evidence/rh-mobile-360.png` e `evidence/rh-speaking-mobile.png`. Não representam a matriz completa de rotas/viewports.
